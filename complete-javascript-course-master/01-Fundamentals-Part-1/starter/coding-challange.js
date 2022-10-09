@@ -1,3 +1,5 @@
+
+// coding-challange#1//
 //variables
 let markHeigh;
 let johnHeigh;
@@ -36,3 +38,16 @@ console.log(bmiJohn);
 //wchich BMI is higher
 markHigherBMI = bmiMark > bmiJohn;
 console.log(markHigherBMI)
+// coding-challange#2//
+
+if (bmiMark > bmiJohn) {
+    console.log("Mark's BMI is higher than Johna's");
+} else {
+    console.log("Johna's BMI is higher than Mark's");
+};
+
+if (bmiMark > bmiJohn) {
+    console.log(`Mark's Bmi ${bmiMark} is higher than Johnas's ${bmiJohn}`);
+} else {
+    console.log(`Johna's Bmi ${bmiJohn} is higher than Mark's ${bmiMark}`)
+}

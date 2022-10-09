@@ -20,3 +20,5 @@ console.log(population > averagePopulation);
 const description = 'Portugal is in Europe ,and its 11 milion people speak portuguese';
 console.log(description);
 
+const descriptionWithLiteralSyntax = `Portugal is in ${continent} ,and its 11 milion people speak portuguese`
+console.log(descriptionWithLiteralSyntax);
