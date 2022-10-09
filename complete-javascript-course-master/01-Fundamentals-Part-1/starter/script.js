@@ -49,5 +49,5 @@ console.log(5 ** 2);
 let x, y;
 x = y = 25 - 10 - 5; // x= y =10, x =10
 console.log(x, y);
-const averageAge = (afeJonas + ageSarag) / 2
-console.loh(ageJonas, ageSarah)
+const averageAge = (ageJonas + ageSarah) / 2
+console.log(ageJonas, ageSarah)
