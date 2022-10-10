@@ -1,12 +1,12 @@
 const country = "Poland";
 const continent = "Europ";
+const language = 'English';
+const isIsland = false;
 let population = 38;
 console.log(country);
 console.log(continent);
 console.log(population);
 
-const isIsland = false;
-const language = 'polish';
 console.log(typeof isIsland);
 console.log(typeof population);
 console.log(typeof country);
@@ -48,7 +48,12 @@ console.log(5 + 6 + '4' + 9 - 4 - 2 + 'wynik:1143');
 
 
 
-
+if (language === 'English' && population < 50 && !isIsland) {
+    const criteria = true;
+    console.log('this country is okey');
+} else {
+    console.log('this country is not fine')
+}
 
 
 

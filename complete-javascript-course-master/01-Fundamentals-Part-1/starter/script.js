@@ -155,26 +155,68 @@
 
 ////////////////////////////////////////////////////////////
 
-const hasDriversLicense = true; //A
-const hasGoodVision = true;//V
-console.log(hasDriversLicense && hasGoodVision);
-console.log(hasDriversLicense || hasGoodVision);
-console.log(!hasDriversLicense);
+// const hasDriversLicense = true; //A
+// const hasGoodVision = true;//V
+// console.log(hasDriversLicense && hasGoodVision);
+// console.log(hasDriversLicense || hasGoodVision);
+// console.log(!hasDriversLicense);
 
-const shouldDribe = hasDriversLicense && hasGoodVision;
+// const shouldDribe = hasDriversLicense && hasGoodVision;
 
-// if (shouldDribe) {
+// // if (shouldDribe) {
+// //     console.log('Sarah is able to drive!');
+// // } else {
+// //     console.log('Someone else should drive..')
+// // }
+
+
+// const isTired = true;//C
+// console.log(hasDriversLicense && hasGoodVision && isTired);
+
+// if (hasDriversLicense && hasGoodVision && !isTired) {
 //     console.log('Sarah is able to drive!');
 // } else {
 //     console.log('Someone else should drive..')
 // }
+////////////////////////////////////////////////////////////////////
 
+const day = 'friday';
 
-const isTired = true;//C
-console.log(hasDriversLicense && hasGoodVision && isTired);
-
-if (hasDriversLicense && hasGoodVision && !isTired) {
-    console.log('Sarah is able to drive!');
-} else {
-    console.log('Someone else should drive..')
+switch (day) {
+    case 'monday':// day ==== 'monday'
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Wride code example');
+        break;
+    case 'friday':
+        console.log('record videos');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the weekend');
+        break;
+    default:
+        console.log('Not a valid day');
 }
+if (day === 'monday') {
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+} else if (day === 'tuesday') {
+    console.log('Prepare theory videos');
+}
+else if (day === 'wedensday' || day === 'thursday') {
+    console.log('Wride code example');
+}
+else if (day === 'friday') {
+    console.log('record videos');
+}
+else if (day === 'saturday' || day === 'sunday') {
+    console.log('Enjoy the weekend');
+}
+else { console.log('Not a valid day'); }
