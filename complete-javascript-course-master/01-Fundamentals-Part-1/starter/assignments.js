@@ -22,3 +22,34 @@ console.log(description);
 
 const descriptionWithLiteralSyntax = `Portugal is in ${continent} ,and its 11 milion people speak portuguese`
 console.log(descriptionWithLiteralSyntax);
+
+console.log('9' - '5' + 'wynik:4');
+console.log('19' - '13' + '17' + 'wynik: 617:');
+console.log('19' - '13' + 17 + 'wynik: 23');
+console.log('123' < 57 + 'wynik: false');
+console.log(5 + 6 + '4' + 9 - 4 - 2 + 'wynik:1143');
+
+// const numNeigHbours = Number(prompt('How many neighbour countries does your country have?'));
+
+// if (numNeigHbours === 1) {
+//     console.log('Only 1 border!')
+// } else if (numNeigHbours > 1) {
+//     console.log('numNeighbours is greater than 1')
+// } else {
+//     console.log('no borders')
+// }
+/////////////////////Notice///////////////
+// we should use '==' operator becouse if we have equals numbers
+// javaScript convert string to number and we get good result
+// when we had used '===' operator then javascript had used more accurate value
+// and won't convert that value
+// or used Number() on prompt and than used '===' operator
+// propably that will be the best solution
+
+
+
+
+
+
+
+

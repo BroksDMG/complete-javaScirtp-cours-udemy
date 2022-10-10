@@ -74,21 +74,107 @@
 // lines`);
 ///////////////////////////////////////////////////////////////////
 
-const age = 15;
-const isOldEnough = age >= 18;
-if (isOldEnough) {
-    console.log('Sarah can start driving license🚗')
+// const age = 15;
+// const isOldEnough = age >= 18;
+// if (isOldEnough) {
+//     console.log('Sarah can start driving license🚗')
+// } else {
+//     const yearsaLefet = 18 - age;
+//     console.log(`Sarah is too young. wait another ${yearsaLefet} years :)`)
+// }
+
+// const birthYear = 1992;
+// let century
+// if (birthYear <= 2000) {
+//     century = 20;
+// } else {
+//     century = 21;
+// };
+// console.log(century)
+
+/////////////////////////////////////////////////////////
+// type conversion
+// const inputYear = '1991';
+// console.log(Number(inputYear), inputYear);
+// console.log(Number(inputYear) + 18);
+
+// console.log(Number('Jonas'));
+// console.log(typeof NaN);
+
+// console.log(String(23), 23);
+// // type coercion
+// console.log('I am ' + 23 + ' years old')
+// console.log('I am ' + 23 + ' years old')
+// console.log('23' - '10' - 3);
+// console.log('23' / '2');
+
+// let n = '1' + 1;
+// n = n - 1;
+// console.log(n);
+
+///////////////////////////////////////////////////////////////
+// // 5 falsy valuse: 0, '', undefinde, null, NaN
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean('Jonas'));
+// console.log(Boolean({}));
+
+// const money = 0;
+//   console.log('you should get a job!');
+// }
+
+// let height = 0;
+// if (height) {
+//     console.log('YAY! height is defined');
+// } else {
+//     console.log('Height is UNDEFINED');
+// }if (money) {
+//     console.log("dont't spedn it all ;)");
+// } else {
+
+/////////////////////////////////////////////////////////
+
+// const age = '18';
+// if (age === 18) console.log('you just became an adult :D (strict)');
+// if (age == 18) console.log('you just became an adult :D (loose)');
+
+// const favourite = Number(prompt("what's your Favurit number?"));
+
+// console.log(favourite);
+// console.log(typeof (favourite));
+
+// if (favourite === 23) {
+//     console.log('cool! 23 i san amazing number !');
+// } else if (favourite === 7) {
+//     console.log('7 is also a cool number');
+// } else {
+//     console.log('Number is not 23 or 7');
+// }
+
+// if (favourite !== 23) console.log('why not 23?');
+
+////////////////////////////////////////////////////////////
+
+const hasDriversLicense = true; //A
+const hasGoodVision = true;//V
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDribe = hasDriversLicense && hasGoodVision;
+
+// if (shouldDribe) {
+//     console.log('Sarah is able to drive!');
+// } else {
+//     console.log('Someone else should drive..')
+// }
+
+
+const isTired = true;//C
+console.log(hasDriversLicense && hasGoodVision && isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log('Sarah is able to drive!');
 } else {
-    const yearsaLefet = 18 - age;
-    console.log(`Sarah is too young. wait another ${yearsaLefet} years :)`)
+    console.log('Someone else should drive..')
 }
-
-const birthYear = 1992;
-let century
-if (birthYear <= 2000) {
-    century = 20;
-} else {
-    century = 21;
-};
-console.log(century)
-
