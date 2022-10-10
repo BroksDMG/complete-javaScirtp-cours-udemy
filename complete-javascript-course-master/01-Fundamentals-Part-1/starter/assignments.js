@@ -1,6 +1,6 @@
 const country = "Poland";
 const continent = "Europ";
-const language = 'English';
+const language = 'Chinese';
 const isIsland = false;
 let population = 38;
 console.log(country);
@@ -53,6 +53,27 @@ if (language === 'English' && population < 50 && !isIsland) {
     console.log('this country is okey');
 } else {
     console.log('this country is not fine')
+}
+
+switch (language) {
+    case 'Chinese':
+    case 'mandarin':
+        console.log("Most number of native speakers!(⌐■_■)");
+        break;
+    case 'English':
+        console.log("3'rd place");
+        break;
+    case 'Spanish':
+        console.log("2'nd place in number of native speakers!");
+        break;
+    case 'Hindi':
+        console.log("Number 4");
+        break;
+    case 'Arabic':
+        console.log("5'th most spoken language");
+        break;
+    default:
+        console.log("Great language to :D")
 }
 
 

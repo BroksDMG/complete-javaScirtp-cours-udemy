@@ -114,5 +114,9 @@
 // }
 // else {
 //     console.log('Koala team wins a trophy!');
-}
+// }
 //////////////////////////////////////////////////////////////////////////
+//coding-challange#4
+let tip;
+let value = 275;
+console.log(`The bill was ${value}, the tip was ${value >= 50 && value <= 300 ? tip = value * 0.15 : tip = value * 0.20}, and the total value ${value + tip}`);
