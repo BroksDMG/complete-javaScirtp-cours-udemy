@@ -70,15 +70,43 @@
 // console.log(yearsUntilRetirment(1991, "Jonas"));
 // console.log(yearsUntilRetirment(1980, "Bob"));
 ///////////////////////////////////////////////
-function cutFruitPieces(fruit) {
-    return fruit * 4;
-}
+// function cutFruitPieces(fruit) {
+//     return fruit * 4;
+// }
 
-function fruitProcessor(apples, oranges) {
-    const applePices = cutFruitPieces(apples);
-    const orangePieces = cutFruitPieces(oranges);
-    console.log(apples, oranges);
-    const juice = `Juice with ${applePices} pieces of apple and ${orangePieces} pieces of oranges.`;
-    return juice;
-}
-console.log(fruitProcessor(2, 3));
+// function fruitProcessor(apples, oranges) {
+//     const applePices = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
+//     console.log(apples, oranges);
+//     const juice = `Juice with ${applePices} pieces of apple and ${orangePieces} pieces of oranges.`;
+//     return juice;
+// }
+// console.log(fruitProcessor(2, 3));
+
+//////////////////////////////
+
+// const calcAge = function (birthYear) {
+//     return 2037 - birthYear;
+// }
+
+// const yearsUntilRetirment = function (birthYear, firstName) {
+//     const age = calcAge(birthYear);
+//     const retirment = 65 - age;
+
+//     if (retirment > 0) {
+//         console.log(`${firstName} retires in ${retirment} years`);
+//         return retirment;
+
+//     } else {
+//         console.log(`${firstName} has alread retired`);
+//         return -1;
+//     }
+
+//     // return `${firstName} retire in ${retirment} years`;
+// }
+
+// console.log(yearsUntilRetirment(1991, "Jonas"));
+// console.log(yearsUntilRetirment(1970, "Mike"));
+//////////////////////////////////////////////
+
+
