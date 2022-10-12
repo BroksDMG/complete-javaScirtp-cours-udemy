@@ -50,3 +50,16 @@ const describePopulation = (country, populaiton) => {
 }
 const describtionOfChinaPopulation = describePopulation("China", 1441);
 console.log(describtionOfChinaPopulation);
+///////////////////////////////////////
+
+const populations = [1441, 83, 11, 38];
+if (populations.length === 4) {
+    console.log("true");
+} else console.log("false")
+
+const percentages = [
+    percentAgeOfWorld3(populations[0]),
+    percentAgeOfWorld3(populations[1]),
+    percentAgeOfWorld3(populations[3]),
+    percentAgeOfWorld3(populations[populations.length - 1])];
+console.log(percentages);
