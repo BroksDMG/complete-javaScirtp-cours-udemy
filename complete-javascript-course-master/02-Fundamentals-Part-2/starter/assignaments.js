@@ -1,13 +1,13 @@
 'use strict';
 
-function describeCountry(country, population, capitalCity) {
-    console.log(`${country} has ${population} milion people and its capital city is ${capitalCity}`)
+// function describeCountry(country, population, capitalCity) {
+//     console.log(`${country} has ${population} milion people and its capital city is ${capitalCity}`)
 
-}
+// }
 
-const Finland = describeCountry("Finland", 6, "Helsinki");
-const Poland = describeCountry("Poland", 38, "Warsaw")
-const Deutschland = describeCountry("Deutschland", 83, "Berlin")
+// const Finland = describeCountry("Finland", 6, "Helsinki");
+// const Poland = describeCountry("Poland", 38, "Warsaw")
+// const Deutschland = describeCountry("Deutschland", 83, "Berlin")
 
 
 /////////////////////////
@@ -43,3 +43,10 @@ console.log(perocentOfChina3);
 console.log(perocentOfPoland3);
 console.log(perocentOfDeutschland3);
 
+const describePopulation = (country, populaiton) => {
+    const precentOfWolrd = percentAgeOfWorld3(populaiton);
+
+    return `${country} has ${populaiton} mioion people, wchich is aobut ${precentOfWolrd}% pepople of the world.`;
+}
+const describtionOfChinaPopulation = describePopulation("China", 1441);
+console.log(describtionOfChinaPopulation);
