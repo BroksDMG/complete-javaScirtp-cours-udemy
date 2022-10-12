@@ -32,4 +32,14 @@ const perocentOfDeutschland2 = percentAgeOfWorld2(83);
 console.log(perocentOfChina2);
 console.log(perocentOfPoland2);
 console.log(perocentOfDeutschland2);
+const percentAgeOfWorld3 = population => {
+    const worldPopulation = 7900;
+    return population * 100 / worldPopulation;
+}
+const perocentOfChina3 = percentAgeOfWorld3(1441);
+const perocentOfPoland3 = percentAgeOfWorld3(38);
+const perocentOfDeutschland3 = percentAgeOfWorld3(83);
+console.log(perocentOfChina3);
+console.log(perocentOfPoland3);
+console.log(perocentOfDeutschland3);
 

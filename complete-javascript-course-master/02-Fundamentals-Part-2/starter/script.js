@@ -32,18 +32,40 @@
 // const appleOrangeJuice = fruitProcessor(2, 4);
 // console.log(appleOrangeJuice);
 //////////////////////////////////////////////////////
-//function declaration
-function calcAge1(brithYeah) {
-    return 2037 - brithYeah;
-}
+// //function declaration
+// function calcAge1(brithYeah) {
+//     return 2037 - brithYeah;
+// }
 
-const age1 = calcAge1(1991);
-console.log(age1);
+// const age1 = calcAge1(1991);
+// console.log(age1);
+// //function expression
+// const calcAge2 = function (brithYeah) {
+//     return 2037 - brithYeah;
+// }
+
+// const age2 = calcAge2(1991);
+
+// console.log(age1, age2);
+//////////////////////////////////////////////////
+
+
 //function expression
 const calcAge2 = function (brithYeah) {
     return 2037 - brithYeah;
 }
 
-const age2 = calcAge2(1991);
+//arrow Function
+const calcAge3 = brithYeah => 2037 - brithYeah;
 
-console.log(age1, age2);
+const age3 = calcAge3(1991);
+console.log(age3)
+const yearsUntilRetirment = (brithYeah, firstName) => {
+    const age = 2037 - brithYeah;
+    const retirment = 65 - age;
+    // return retirment;
+    return `${firstName} retire in ${retirment} years`;
+}
+
+console.log(yearsUntilRetirment(1991, "Jonas"));
+console.log(yearsUntilRetirment(1980, "Bob"));
