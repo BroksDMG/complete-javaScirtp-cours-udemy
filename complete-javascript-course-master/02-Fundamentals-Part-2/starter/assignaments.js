@@ -137,3 +137,10 @@ console.log(myCountry.isIsland);
 //     console.log(`Voter number ${i} is currently voting`)
 // }
 ////////////////////////////////
+const percentages2 = [];
+
+for (let i = 0; i < populations.length; i++) {
+
+    percentages2.push(percentAgeOfWordl1(populations[i]))
+};
+console.log(percentages2);

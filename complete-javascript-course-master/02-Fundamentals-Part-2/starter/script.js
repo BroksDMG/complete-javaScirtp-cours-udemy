@@ -183,7 +183,7 @@
 //     console.log("You have a freind called Steven")
 // }
 ///////////////////////////////////////
-
+//introduction to Object
 // const jonasArray = [
 //     'Jonas',
 //     'Schmedtman',
@@ -249,3 +249,45 @@
 
 //////////////////////////////////////////////////
 
+const jonasArray = [
+    'Jonas',
+    'Schmedtman',
+    2036 - 1991,
+    'Teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+]
+const types = [];
+// for (let i = 0; i < jonasArray.length; i++) {
+//     console.log(jonasArray[i], typeof jonasArray[i]);
+
+// };
+for (let i = 0; i < jonasArray.length; i++) {
+    console.log[typeof jonasArray[i]];
+
+    // filling types array
+    // types[i] = typeof jonasArray[i];
+
+    types.push(typeof jonasArray[i]);
+};
+console.log(types)
+
+const years = [1991, 2007, 1969, 2020];
+
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+
+}
+console.log(ages)
+
+//contiunue and break
+console.log('-----ONLY STIRNG------')
+for (let i = 0; i < jonasArray.length; i++) {
+
+    if (typeof jonasArray[i] === 'number') break;
+
+    console.log(jonasArray[i], typeof jonasArray[i]);
+
+
+};
