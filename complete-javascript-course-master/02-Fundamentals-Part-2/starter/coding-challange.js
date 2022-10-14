@@ -58,28 +58,67 @@
 
 ///coding-chalannge#3
 
-const Mark = {
-    firstName: "Mark",
-    LastName: "Miller",
-    mass: 78,
-    heigh: 1.69,
-    BMI: function () {
+// const Mark = {
+//     firstName: "Mark",
+//     LastName: "Miller",
+//     mass: 78,
+//     heigh: 1.69,
+//     BMI: function () {
 
-        return this.mass / this.heigh ** 2;
-    }
+//         return this.mass / this.heigh ** 2;
+//     }
 
-};
-const John = {
-    firstName: "John",
-    LastName: "Smith",
-    mass: 92,
-    heigh: 1.95,
-    BMI: function () {
-        return this.mass / this.heigh ** 2;
+// };
+// const John = {
+//     firstName: "John",
+//     LastName: "Smith",
+//     mass: 92,
+//     heigh: 1.95,
+//     BMI: function () {
+//         return this.mass / this.heigh ** 2;
+//     }
+// };
+// console.log(Mark.BMI());
+// console.log(John.BMI());
+// Mark.BMI() > John.BMI() ?
+//     console.log(`${Mark.firstName}'s BMI(${Mark.BMI()}) is higher than ${John.firstName}'s(${John.BMI()})`) :
+//     console.log(`${John.firstName}'s BMI(${John.BMI()}) is higher than ${Mark.firstName}'s(${Mark.BMI()})`);
+
+///coding-challange#4
+
+const Steven = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const total = [];
+
+const calcTip = (bill) => {
+    let tip;
+    let sum;
+    if (bill >= 50 && bill <= 300) {
+        tip = bill * 15 / 100;
+        sum = tip + bill;
+        return tip;
+    }
+    else {
+        tip = bill * 20 / 100;
+        sum = tip + bill;
+        return tip;
     }
 };
-console.log(Mark.BMI());
-console.log(John.BMI());
-Mark.BMI() > John.BMI() ?
-    console.log(`${Mark.firstName}'s BMI(${Mark.BMI()}) is higher than ${John.firstName}'s(${John.BMI()})`) :
-    console.log(`${John.firstName}'s BMI(${John.BMI()}) is higher than ${Mark.firstName}'s(${Mark.BMI()})`);
+for (let i = 0; i < Steven.length; i++) {
+    tips.push(calcTip(Steven[i]))
+    total.push(calcTip(Steven[i]) + Steven[i]);
+}
+console.log(tips);
+console.log(total);
+
+let sum = 0;
+const calcAverage = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+
+    }
+    return sum / arr.length;
+}
+calcAverage(Steven);
+console.log(sum);
+console.log(calcAverage(Steven));

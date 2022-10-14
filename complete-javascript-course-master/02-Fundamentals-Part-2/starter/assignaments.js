@@ -144,3 +144,18 @@ for (let i = 0; i < populations.length; i++) {
     percentages2.push(percentAgeOfWordl1(populations[i]))
 };
 console.log(percentages2);
+
+
+////////////////////////////////////
+
+const listOfNeighbours = [
+    ['Canada', 'Mexico'],
+    ['Spain'],
+    ['Norway', 'Sweden', 'Russia']];
+
+for (let first = 0; first < listOfNeighbours.length; first++) {
+    for (let second = 0; second < listOfNeighbours[first].length; second++) {
+
+        console.log(`Neighbour: ${listOfNeighbours[first][second]}`);
+    }
+}
