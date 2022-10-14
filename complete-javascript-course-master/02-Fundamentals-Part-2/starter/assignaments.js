@@ -90,11 +90,50 @@ console.log(neighbours);
 
 
 const myCountry = {
-    country: "Poland",
-    capital: 'Warsaw',
-    language: 'Polish',
-    populaiton: 38,
-    neighbours: ['Germany', 'Czech Republic', 'Slovakia', 'Ukraine', 'Lithuania', 'Russia']
+    country: "Finlad",
+    capital: 'Helsinki',
+    language: 'Finnish',
+    populaiton: 6,
+    neighbours: ['Norway', 'Russia', 'Sweden'],
+    describe: function () {
+        console.log(`${this.country} has ${this.populaiton} million 
+    ${this.language}-speaking people, ${this.neighbours.length} neighbouring 
+    countries and a capital called ${this.capital}    `)
+    },
+    isIsland: true,
+    checkIsIsland: function () {
+        if (this.neighbours.length < 1) this.isIsland = true;
+        else if (this.neighbours.length >= 1) this.isIsland = false;
 
+    }
 };
 console.log(myCountry);
+
+/////////////////////////////////////////////////////////
+// console.log(`${myCountry.country} has ${myCountry.populaiton} million
+//  ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring
+//  countries and a capital called ${myCountry.capital}`);
+
+// myCountry.populaiton += 2;
+
+// console.log(`${myCountry.country} has ${myCountry.populaiton} million
+//  ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring
+//  countries and a capital called ${myCountry.capital}`);
+
+// myCountry['populaiton'] -= 2;
+
+// console.log(`${myCountry.country} has ${myCountry.populaiton} million
+//  ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring
+//  countries and a capital called ${myCountry.capital}`);
+
+/////////////////////////////////////////////////
+
+myCountry.describe();
+myCountry.checkIsIsland();
+console.log(myCountry.isIsland);
+////////////////////////////////////////
+
+// for (let i = 1; i <= 50; i++) {
+//     console.log(`Voter number ${i} is currently voting`)
+// }
+////////////////////////////////

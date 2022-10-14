@@ -239,57 +239,13 @@
 
 ////////////////////////////////////////////////////////
 
-const jonas = {
-    firstName: 'Jonas',
-    lastName: 'Schmedtman',
-    birthYeah: 1991,
-    job: 'Teacher',
-    friends: ['Michael', 'Peter', 'Steven'],
-    hasDruversLicense: true,
+//
 
-    // calcAge: function (birthYeah) {
-    //     return 2037 - birthYeah;
+/////////////////////////////////////////////////////////////
 
-    // }
-    // calcAge: function () {
-    //     console.log(this);
-    //     return 2037 - this.birthYeah;
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+// }
 
-    // }
-    calcAge: function () {
-        this.age = 2037 - this.birthYeah;
-        return this.age;
+//////////////////////////////////////////////////
 
-    }
-};
-
-console.log(jonas.calcAge());
-
-console.log(jonas.age);
-console.log(jonas.age);
-console.log(jonas.age);
-
-// console.log(jonas["calcAge"](1991));
-
-//challange
-// "Jobnas is a 46-yars old teacher"
-
-const Brutus = {
-    firstName: "Brutus",
-    lastName: "Smith",
-    birthYeah: 1998,
-    job: "Taxi Driver",
-    hasDrverLicence: true,
-    calcAge: function () {
-        this.age = 2022 - this.birthYeah;
-        return this.age;
-    }
-};
-Brutus.calcAge();
-if (Brutus.hasDrverLicence) {
-    console.log(`${Brutus.firstName} is a ${Brutus.age}-years ${Brutus.job},
-    and he has a driver's license`)
-} else {
-    console.log(`${Brutus.firstName} is a ${Brutus.age}-years ${Brutus.job},
-    and he hasn't a driver's license`)
-}
