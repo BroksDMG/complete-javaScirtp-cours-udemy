@@ -32,26 +32,54 @@
 
 ////coding -challange #2
 
-const calcTip = (bill) => {
-    let tip;
-    let sum;
-    if (bill >= 50 && bill <= 300) {
-        tip = bill * 15 / 100;
-        sum = tip + bill;
-        return sum;
+// const calcTip = (bill) => {
+//     let tip;
+//     let sum;
+//     if (bill >= 50 && bill <= 300) {
+//         tip = bill * 15 / 100;
+//         sum = tip + bill;
+//         return sum;
+//     }
+//     else {
+//         tip = bill * 20 / 100;
+//         sum = tip + bill;
+//         return sum;
+//     }
+// };
+// const bills = [125, 555, 44];
+// const total = [];
+// total.push(calcTip(bills[0]))
+// total.push(calcTip(bills[1]))
+// total.push(calcTip(bills[2]))
+// console.log(calcTip(bills[0]));
+// console.log(calcTip(bills[1]));
+// console.log(calcTip(bills[2]));
+// console.log(total);
+
+///coding-chalannge#3
+
+const Mark = {
+    firstName: "Mark",
+    LastName: "Miller",
+    mass: 78,
+    heigh: 1.69,
+    BMI: function () {
+
+        return this.mass / this.heigh ** 2;
     }
-    else {
-        tip = bill * 20 / 100;
-        sum = tip + bill;
-        return sum;
+
+};
+const John = {
+    firstName: "John",
+    LastName: "Smith",
+    mass: 92,
+    heigh: 1.95,
+    BMI: function () {
+        return this.mass / this.heigh ** 2;
     }
 };
-const bills = [125, 555, 44];
-const total = [];
-total.push(calcTip(bills[0]))
-total.push(calcTip(bills[1]))
-total.push(calcTip(bills[2]))
-console.log(calcTip(bills[0]));
-console.log(calcTip(bills[1]));
-console.log(calcTip(bills[2]));
-console.log(total);
+console.log(Mark.BMI());
+console.log(John.BMI());
+Mark.BMI() > John.BMI() ?
+    console.log(`${Mark.firstName}'s BMI(${Mark.BMI()}) is higher than ${John.firstName}'s(${John.BMI()})`) :
+    console.log(`${John.firstName}'s BMI(${John.BMI()}) is higher than ${Mark.firstName}'s(${Mark.BMI()})`);
