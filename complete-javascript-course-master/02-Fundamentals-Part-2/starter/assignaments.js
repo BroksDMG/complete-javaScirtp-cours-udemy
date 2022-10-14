@@ -87,3 +87,14 @@ if (neighbours.includes('Germany')) {
 neighbours[neighbours.indexOf("Czech")] = "Czech Republic";
 console.log(neighbours);
 ///////////////////////////////////////////////////////
+
+
+const myCountry = {
+    country: "Poland",
+    capital: 'Warsaw',
+    language: 'Polish',
+    populaiton: 38,
+    neighbours: ['Germany', 'Czech Republic', 'Slovakia', 'Ukraine', 'Lithuania', 'Russia']
+
+};
+console.log(myCountry);
