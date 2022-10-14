@@ -153,32 +153,49 @@
 /////////////////////////////////////////////////
 
 
-const friends = ['Michael', 'Steven', 'Peter'];
-/// add elemets to array
-const newLength = friends.push('Jay');
-console.log(friends);
-console.log(newLength);
+// const friends = ['Michael', 'Steven', 'Peter'];
+// /// add elemets to array
+// const newLength = friends.push('Jay');
+// console.log(friends);
+// console.log(newLength);
 
-friends.unshift('John');
-console.log(friends);
+// friends.unshift('John');
+// console.log(friends);
 
-//remove elements
-friends.pop();// last
-const popped = friends.pop();
-console.log(popped);
-console.log(friends);
+// //remove elements
+// friends.pop();// last
+// const popped = friends.pop();
+// console.log(popped);
+// console.log(friends);
 
-friends.shift() //first
-console.log(friends);
+// friends.shift() //first
+// console.log(friends);
 
-console.log(friends.indexOf('Steven'));
-console.log(friends.indexOf('Bob'));
+// console.log(friends.indexOf('Steven'));
+// console.log(friends.indexOf('Bob'));
 
-friends.push(23);
-console.log(friends.includes('Steven'));
-console.log(friends.includes('Bob'));
-console.log(friends.includes(23));
+// friends.push(23);
+// console.log(friends.includes('Steven'));
+// console.log(friends.includes('Bob'));
+// console.log(friends.includes(23));
 
-if (friends.includes('Steven')) {
-    console.log("You have a freind called Steven")
-}
+// if (friends.includes('Steven')) {
+//     console.log("You have a freind called Steven")
+// }
+///////////////////////////////////////
+
+const jonasArray = [
+    'Jonas',
+    'Schmedtman',
+    2036 - 1991,
+    'Teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+const jonas = {
+    firstName: 'Jonas',
+    lastNAme: 'Schmedtman',
+    age: 2037 - 1991,
+    job: 'Teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};

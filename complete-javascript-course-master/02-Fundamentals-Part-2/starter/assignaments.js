@@ -63,3 +63,27 @@ const percentages = [
     percentAgeOfWorld3(populations[3]),
     percentAgeOfWorld3(populations[populations.length - 1])];
 console.log(percentages);
+
+///////////////////////////////////////////
+
+const neighbours = [
+    "Russia",
+    "Lithuania",
+    "Ukraine",
+    "Slovakia",
+    "Czech",
+    "Germany"
+];
+console.log(neighbours);
+neighbours.push("Utopia");
+console.log(neighbours);
+
+neighbours.pop();
+console.log(neighbours);
+if (neighbours.includes('Germany')) {
+    console.log("Propably a central Eurpan country :D")
+} else console.log("Propably not a central Eurpan country :D")
+
+neighbours[neighbours.indexOf("Czech")] = "Czech Republic";
+console.log(neighbours);
+///////////////////////////////////////////////////////
