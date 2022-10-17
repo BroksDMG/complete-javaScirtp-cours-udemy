@@ -21,6 +21,7 @@ docSel('.number').textContent= secretNumber;
 // fix score string
 
 let score =20;
+let highScore =0;
 //
 docSel('.check').addEventListener('click',function (){
     
@@ -33,23 +34,28 @@ docSel('.check').addEventListener('click',function (){
     }else if(guessNumebr> secretNumber){
         docSel('.message').textContent = "📈 To high!"
         score--;
-        docSel('.label-score').textContent=score;
+        docSel('.score').textContent=score;
+        if(score<1){
+            docSel('.message').textContent = "😿You lose the game😿"
+            docSel('.score').textContent= 0;
+        }
     }
     else if(guessNumebr< secretNumber){
         docSel('.message').textContent = "📉 To low!"
         score--;
-        docSel('.label-score').textContent=score;
+        docSel('.score').textContent=score;
+        if(score<1){
+            docSel('.message').textContent = "😿You lose the game😿"
+            docSel('.score').textContent= 0;
+        }
     }
     else if(guessNumebr === secretNumber){
         docSel('.message').textContent = "🎉 Congratulation!"
-
+        if(highScore<score){
+        highScore=score;
+        docSel('.highscore').textContent=highScore;
+        }else{
+        docSel('.highscore').textContent=highScore
+        };
     }
-    else if(score<1){
-        docSel('.message').textContent = "😿You lose the game😿"
-        
-    }
-
-    
-
-
 })
