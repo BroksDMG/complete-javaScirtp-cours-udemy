@@ -12,13 +12,16 @@
  }
 const secretNumber = Math.floor(Math.random()*20)+1;
 docSel('.number').textContent= secretNumber;
+/////////////////////////////////////////////
 
-//chech guess number is number?
-//if is lower show "numebr is higher" and socre -1
-//if is higher show "numebr is lover" and score -1
-// if is correct show "congratulation" and save highscore
-// lose the game if score is lower than 1
-// fix score string
+//chech guess number is number?V
+//if is lower show "numebr is higher" and socre -1V
+//if is higher show "numebr is lover" and score -1V
+// if is correct show "congratulation" and save highscore V
+// lose the game if score is lower than 1 V
+// fix score string V
+/////////////////////////////////////////////
+// create function for again buton
 
 let score =20;
 let highScore =0;
@@ -27,10 +30,10 @@ docSel('.check').addEventListener('click',function (){
     
     const guessNumebr = Number(docSel('.guess').value);
     console.log(guessNumebr,typeof guessNumebr)
-    if(!guessNumebr){
-        docSel('.message').textContent = " it's not a number";
+    if(!guessNumebr||guessNumebr>20||guessNumebr<1){
+        docSel('.message').textContent = "Number between 1 and 20!😡";
         score--;
-        docSel('.label-score').textContent=score;
+        docSel('.score').textContent=score;
     }else if(guessNumebr> secretNumber){
         docSel('.message').textContent = "📈 To high!"
         score--;
@@ -50,7 +53,7 @@ docSel('.check').addEventListener('click',function (){
         }
     }
     else if(guessNumebr === secretNumber){
-        docSel('.message').textContent = "🎉 Congratulation!"
+        docSel('.message').textContent = "🎉 You WIN 🎉congratulation!"
         if(highScore<score){
         highScore=score;
         docSel('.highscore').textContent=highScore;
@@ -58,4 +61,9 @@ docSel('.check').addEventListener('click',function (){
         docSel('.highscore').textContent=highScore
         };
     }
-})
+});
+
+docSel('.again').addEventListener('click',function(){
+    docSel('.score').textContent= score=20;
+
+});
