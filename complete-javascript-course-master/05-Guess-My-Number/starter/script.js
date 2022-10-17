@@ -9,9 +9,13 @@
 // console.log(document.querySelector('.guess').value);
  const docSel =function (argument) {
     return document.querySelector(argument)
- }
-const secretNumber = Math.floor(Math.random()*20)+1;
-docSel('.number').textContent= secretNumber;
+ };
+ const rndNumber = function(){
+    const secretNumber=Math.floor(Math.random()*20)+1;
+    return secretNumber;
+ };
+let secretNumber =rndNumber();
+
 /////////////////////////////////////////////
 
 //chech guess number is number?V
@@ -20,12 +24,28 @@ docSel('.number').textContent= secretNumber;
 // if is correct show "congratulation" and save highscore V
 // lose the game if score is lower than 1 V
 // fix score string V
+// change background on green
 /////////////////////////////////////////////
-// create function for again buton
+//////create function for again buton////////
+// create new random number after clicking the button
 
 let score =20;
 let highScore =0;
-//
+
+docSel('.again').addEventListener('click',function(){
+    secretNumber= rndNumber();
+    docSel('.score').textContent= score=20;
+    docSel('.number').textContent= secretNumber;
+    docSel('body').style.backgroundColor = '#222';
+    docSel('.number').style.width ='15rem';
+    docSel('.number').style.fontSize ='6rem';
+    docSel('.message').textContent = "Start guessing..."
+    docSel('.guess').value = null;
+    docSel('.number').textContent= "?";
+    docSel('h1').textContent = "Guess My Number!"
+
+});
+
 docSel('.check').addEventListener('click',function (){
     
     const guessNumebr = Number(docSel('.guess').value);
@@ -53,7 +73,12 @@ docSel('.check').addEventListener('click',function (){
         }
     }
     else if(guessNumebr === secretNumber){
-        docSel('.message').textContent = "🎉 You WIN 🎉congratulation!"
+        docSel('.message').textContent = "congratulation!"
+        docSel('h1').textContent = "🎉 You WIN 🎉"
+        docSel('body').style.backgroundColor = 'green';
+        docSel('.number').style.width ='30rem';
+        docSel('.number').style.fontSize ='12rem';
+        docSel('.number').textContent= secretNumber;
         if(highScore<score){
         highScore=score;
         docSel('.highscore').textContent=highScore;
@@ -63,7 +88,3 @@ docSel('.check').addEventListener('click',function (){
     }
 });
 
-docSel('.again').addEventListener('click',function(){
-    docSel('.score').textContent= score=20;
-
-});
