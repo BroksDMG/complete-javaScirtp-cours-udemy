@@ -50,41 +50,64 @@ const restaurant = {
   }
 
 };
+///////////////////operator or || and &&/////////////////
+console.log(3||'jonas');
+console.log(""||'jonas');
+console.log(true||'jonas');
+console.log(undefined||null);
+console.log(undefined||null||0||'Hello'||23||'');
+
+const guest1= restaurant.numGuest? restaurant.numGuest:10;
+console.log(guest1);//10
+const guest2= restaurant.numGuest||10;
+console.log(guest2);//10
+
+console.log(0&&'jonas');//0
+console.log(7&&'jonas');//jonas
+console.log('hello'&&23&&null&&'jonas');//null
+
+//practical example'
+if(restaurant.orderPizza){
+  restaurant.orderPizza('mushrooms','spinach')};
+
+restaurant.orderPizza&&restaurant.orderPizza(
+  'mushrooms','spinach');
+
 ////////////////////////////Operator Rest //////////////////////////
 
-//Spread, becouse on RIGHT side of  =
-const arr=[1,2, ...[3,4]]; //1,2,3,4
+// //Spread, becouse on RIGHT side of  =
+// const arr=[1,2, ...[3,4]]; //1,2,3,4
 
-//Rest, becouse on LEFT side of =
-const[a,b,...others]=[1,2,3,4,5];// 1,2,[3,4,5];
-console.log(a,b,others);
+// //Rest, becouse on LEFT side of =
+// const[a,b,...others]=[1,2,3,4,5];// 1,2,[3,4,5];
+// console.log(a,b,others);
 
-const[Pizza,, Risotto,...othersFood]=[//pizza Risotto ["focaccia","Bruschetta",itd.]
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-
-
-//object
-const{sat,...wekdays}=restaurant.openingHours;
-console.log(wekdays);
+// const[Pizza,, Risotto,...othersFood]=[//pizza Risotto ["focaccia","Bruschetta",itd.]
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
 
 
-//2) functions
-const add =function(...numbers){
-  let sum=0;
-  for(let i=0;i<numbers.length;i++){
-    sum+=numbers[i];
-  } 
-  return sum;
-}
-console.log(add(4,2)) //6
-console.log(add(4,2,6,4,2))//summ all elements of arrray =18
+// //object
+// const{sat,...wekdays}=restaurant.openingHours;
+// console.log(wekdays);
 
-const x =[23,5,7];
-add(...x);
-restaurant.orderPizza('mashrooms','onion','olives','spinach');
-restaurant.orderPizza('mashrooms')
+
+// //2) functions
+// const add =function(...numbers){
+//   let sum=0;
+//   for(let i=0;i<numbers.length;i++){
+//     sum+=numbers[i];
+//   } 
+//   return sum;
+// }
+// console.log(add(4,2)) //6
+// console.log(add(4,2,6,4,2))//summ all elements of arrray =18
+
+// const x =[23,5,7];
+// add(...x);
+// restaurant.orderPizza('mashrooms','onion','olives','spinach');
+// restaurant.orderPizza('mashrooms')
 // ////////////////////////////operator Spread/////////////////////
 // //object
 // const newRestauran={    //copying restauran and add 2 new element
