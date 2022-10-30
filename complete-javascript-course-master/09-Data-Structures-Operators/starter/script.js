@@ -11,6 +11,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  order:function(starterIndex,mainIndex){
+    return [this.starterMenu[starterIndex],this.mainMenu[mainIndex]];
+  },
 
   openingHours: {
     thu: {
@@ -27,3 +30,43 @@ const restaurant = {
     },
   },
 };
+
+const arr =[2,3,4];
+const a =arr[0];//a=2
+const b =arr[1];//b=3
+const c =arr[2];//c=4
+
+const [x,y,z]=arr;
+console.log(x,y,z); //x =2 ,y=3,z=4
+console.log(arr); //arr=[2,3,4];
+
+const [first, second]=restaurant.categories;
+// display Italian Pizzeria
+console.log(first,second);
+
+let [main, ,secendary]= restaurant.categories;
+//display Italian Vegetarian
+console.log(main,secendary);
+
+// //swiching variables 
+//  const temp = main;
+//  main = secendary;
+//  secendary= temp;
+//  console.log(main,secendary);
+
+[main,secendary]= [secendary,main];
+console.log(main,secendary);
+
+//receive 2 return values from function;
+const [sterter,maain]= restaurant.order(2,0);
+
+console.log(sterter,maain);
+
+const nested=[2,4,[5,6]];
+//const [i,j]=nested;
+const [i,,[j,k]]=nested;
+console.log(i,j,k);
+
+//defult values
+// const [p,q,r]=[8,9]; //p=8,q=9,r=undefind
+const [p=1,q=1,r=1]=[8,9]; //p=8,q=9,r=1
