@@ -43,56 +43,96 @@ const restaurant = {
   orderPasta: function(ing1,ing2,ing3){
     console.log(`Here is your delicious pasta with
     ${ing1}, ${ing2} and ${ing3}`);
+  },
+  orderPizza:function(mainIngredient,...otherIngredients){
+    console.log(mainIngredient);
+    console.log(otherIngredients);
   }
+
 };
+////////////////////////////Operator Rest //////////////////////////
+
+//Spread, becouse on RIGHT side of  =
+const arr=[1,2, ...[3,4]]; //1,2,3,4
+
+//Rest, becouse on LEFT side of =
+const[a,b,...others]=[1,2,3,4,5];// 1,2,[3,4,5];
+console.log(a,b,others);
+
+const[Pizza,, Risotto,...othersFood]=[//pizza Risotto ["focaccia","Bruschetta",itd.]
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+
 
 //object
-const newRestauran={    //copying restauran and add 2 new element
-  FoundedIn:1998,       // foundedIn and founder
-  ...restaurant,
-  founder:'Guiseppe'};
-  console.log(newRestauran);
+const{sat,...wekdays}=restaurant.openingHours;
+console.log(wekdays);
 
-  const restaurantCopy={...restaurant};
-  restaurantCopy.name='Ristorante Roma'; //all the same except name
-  console.log(restaurant);
-  console.log(restaurantCopy);
 
-//live example
+//2) functions
+const add =function(...numbers){
+  let sum=0;
+  for(let i=0;i<numbers.length;i++){
+    sum+=numbers[i];
+  } 
+  return sum;
+}
+console.log(add(4,2)) //6
+console.log(add(4,2,6,4,2))//summ all elements of arrray =18
 
-const ingredients=[
-  // prompt('let\'s make pasta! Ingredient 1?'),
-  // prompt('Ingredient 2?'),
-  // prompt('Ingredient 2'),
-];
-console.log(ingredients);
-restaurant.orderPasta(ingredients[0],ingredients[1],ingredients[2]);
+const x =[23,5,7];
+add(...x);
+restaurant.orderPizza('mashrooms','onion','olives','spinach');
+restaurant.orderPizza('mashrooms')
+// ////////////////////////////operator Spread/////////////////////
+// //object
+// const newRestauran={    //copying restauran and add 2 new element
+//   FoundedIn:1998,       // foundedIn and founder
+//   ...restaurant,
+//   founder:'Guiseppe'};
+//   console.log(newRestauran);
 
-restaurant.orderPasta(...ingredients);
+//   const restaurantCopy={...restaurant};
+//   restaurantCopy.name='Ristorante Roma'; //all the same except name
+//   console.log(restaurant);
+//   console.log(restaurantCopy);
 
-const arr = [7,8,9];
-const badNewArr= [1,2, arr[0],arr[1],arr[2]];
-console.log(badNewArr);   //same as below
+// //live example
 
-const newArr=[1,2,...arr];
-console.log(newArr);      //display 1,2,7,8,9
+// const ingredients=[
+//   // prompt('let\'s make pasta! Ingredient 1?'),
+//   // prompt('Ingredient 2?'),
+//   // prompt('Ingredient 2'),
+// ];
+// console.log(ingredients);
+// restaurant.orderPasta(ingredients[0],ingredients[1],ingredients[2]);
 
-const newMenu=[...restaurant.mainMenu, 'Gnucci']; //create new array with "gnucci"
-console.log(newMenu);
+// restaurant.orderPasta(...ingredients);
 
-// copy array
-const mainMenuCopy =[...restaurant.mainMenu];
+// const arr = [7,8,9];
+// const badNewArr= [1,2, arr[0],arr[1],arr[2]];
+// console.log(badNewArr);   //same as below
 
-//Join 2 arrays
-const menu = [...restaurant.mainMenu,...restaurant.starterMenu];
-console.log(menu);
+// const newArr=[1,2,...arr];
+// console.log(newArr);      //display 1,2,7,8,9
 
-//Iterables:arrays,strings,maps,sets.Not Objects
+// const newMenu=[...restaurant.mainMenu, 'Gnucci']; //create new array with "gnucci"
+// console.log(newMenu);
 
-const str= 'Jonsa';
-const letters=[...str, " ",'S.']; //  'J','o','n','a','s','','s.'
-console.log(...str); // J o n a s
-// console.log(`${...str} schmedtmann`); //its not gona work
+// // copy array
+// const mainMenuCopy =[...restaurant.mainMenu];
+
+// //Join 2 arrays
+// const menu = [...restaurant.mainMenu,...restaurant.starterMenu];
+// console.log(menu);
+
+// //Iterables:arrays,strings,maps,sets.Not Objects
+
+// const str= 'Jonsa';
+// const letters=[...str, " ",'S.']; //  'J','o','n','a','s','','s.'
+// console.log(...str); // J o n a s
+// // console.log(`${...str} schmedtmann`); //its not gona work
 
 
 ///////////////////////Destructuring object/////////////////////
