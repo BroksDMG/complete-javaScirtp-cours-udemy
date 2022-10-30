@@ -40,18 +40,72 @@ const restaurant = {
       and ${this.mainMenu[mainIndex]} will be dilivered 
       to ${address} at ${time}`);
   },
+  orderPasta: function(ing1,ing2,ing3){
+    console.log(`Here is your delicious pasta with
+    ${ing1}, ${ing2} and ${ing3}`);
+  }
 };
-restaurant.orderDelivery({
-  address:'Via del Sole,21',
-  starterIndex:1,
-})
-restaurant.orderDelivery({
-  time:'20:30',
-  address:'Via del Sole,21',
-  mainIndex:2,
-  starterIndex:2,
-});
+
+//object
+const newRestauran={    //copying restauran and add 2 new element
+  FoundedIn:1998,       // foundedIn and founder
+  ...restaurant,
+  founder:'Guiseppe'};
+  console.log(newRestauran);
+
+  const restaurantCopy={...restaurant};
+  restaurantCopy.name='Ristorante Roma'; //all the same except name
+  console.log(restaurant);
+  console.log(restaurantCopy);
+
+//live example
+
+const ingredients=[
+  // prompt('let\'s make pasta! Ingredient 1?'),
+  // prompt('Ingredient 2?'),
+  // prompt('Ingredient 2'),
+];
+console.log(ingredients);
+restaurant.orderPasta(ingredients[0],ingredients[1],ingredients[2]);
+
+restaurant.orderPasta(...ingredients);
+
+const arr = [7,8,9];
+const badNewArr= [1,2, arr[0],arr[1],arr[2]];
+console.log(badNewArr);   //same as below
+
+const newArr=[1,2,...arr];
+console.log(newArr);      //display 1,2,7,8,9
+
+const newMenu=[...restaurant.mainMenu, 'Gnucci']; //create new array with "gnucci"
+console.log(newMenu);
+
+// copy array
+const mainMenuCopy =[...restaurant.mainMenu];
+
+//Join 2 arrays
+const menu = [...restaurant.mainMenu,...restaurant.starterMenu];
+console.log(menu);
+
+//Iterables:arrays,strings,maps,sets.Not Objects
+
+const str= 'Jonsa';
+const letters=[...str, " ",'S.']; //  'J','o','n','a','s','','s.'
+console.log(...str); // J o n a s
+// console.log(`${...str} schmedtmann`); //its not gona work
+
+
 ///////////////////////Destructuring object/////////////////////
+// restaurant.orderDelivery({
+//   address:'Via del Sole,21',
+//   starterIndex:1,
+// })
+// restaurant.orderDelivery({
+//   time:'20:30',
+//   address:'Via del Sole,21',
+//   mainIndex:2,
+//   starterIndex:2,
+// });
 // const {name,openingHours,categories}= restaurant;
 // //display Name, metod OpeningHours and array categories
 // console.log(name,openingHours,categories);
