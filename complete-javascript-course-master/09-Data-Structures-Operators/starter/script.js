@@ -50,28 +50,63 @@ const restaurant = {
   }
 
 };
-///////////////////operator or || and &&/////////////////
-console.log(3||'jonas');
-console.log(""||'jonas');
-console.log(true||'jonas');
-console.log(undefined||null);
-console.log(undefined||null||0||'Hello'||23||'');
 
-const guest1= restaurant.numGuest? restaurant.numGuest:10;
-console.log(guest1);//10
-const guest2= restaurant.numGuest||10;
-console.log(guest2);//10
+/////////////////nullish coalescing operator
 
-console.log(0&&'jonas');//0
-console.log(7&&'jonas');//jonas
-console.log('hello'&&23&&null&&'jonas');//null
+restaurant.numGuests=0;    
+const guest3= restaurant.numGuests??10 // 0
+console.log(guest3);
 
-//practical example'
-if(restaurant.orderPizza){
-  restaurant.orderPizza('mushrooms','spinach')};
+const rest1={
+  name:"La pizza",
+  numGuests:0,
+}
+const rest2={
+  name:'Capri',
+  owner:'Giovani Gucci',
+}
 
-restaurant.orderPizza&&restaurant.orderPizza(
-  'mushrooms','spinach');
+// //////////////////////////logical assignament operator//////////////
+// //Or asigment operator
+// //  rest1.numGuests=rest1.numGuests||10; //10  incorrect. should return 0
+// //  rest2.numGuests=rest2.numGuests||10; //10  correct
+
+// //  rest1.numGuests||=10;
+// //  rest2.numGuests||=10;       //same as above but in shorcut
+// //// solution is nullish operator(null and undefinde)
+// rest1.numGuests??=10; //0   correct
+// rest2.numGuests??=10; //10  correct
+// //And assigment operator
+// // rest1.owner =rest1.owner||'<ANONYMOUS>';//correct ,do nothing becouse rest1.owner is false
+// // rest2.owner =rest2.owner||'<ANONYMOUS>';//correct , change rest2.owner on <ANONYMOUS>
+// rest1.owner&&='<ANONYMOUS>';//same as above but in shortcut
+// rest2.owner&&='<ANONYMOUS>';//
+
+
+// console.log(rest1);
+// console.log(rest2);
+// ///////////////////operator or || and &&/////////////////
+// console.log(3||'jonas');
+// console.log(""||'jonas');
+// console.log(true||'jonas');
+// console.log(undefined||null);
+// console.log(undefined||null||0||'Hello'||23||'');
+
+// const guest1= restaurant.numGuest? restaurant.numGuest:10;
+// console.log(guest1);//10
+// const guest2= restaurant.numGuest||10;
+// console.log(guest2);//10
+
+// console.log(0&&'jonas');//0
+// console.log(7&&'jonas');//jonas
+// console.log('hello'&&23&&null&&'jonas');//null
+
+// //practical example'
+// if(restaurant.orderPizza){
+//   restaurant.orderPizza('mushrooms','spinach')};
+
+// restaurant.orderPizza&&restaurant.orderPizza(
+//   'mushrooms','spinach');
 
 ////////////////////////////Operator Rest //////////////////////////
 
