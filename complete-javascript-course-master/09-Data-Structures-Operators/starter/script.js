@@ -1,24 +1,21 @@
 'use strict';
 
 // Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-  const days =['mon','tue','wed','thu','fri','sat','sun'];
- const  openingHours={
-    [days[3]]: {
+const flights ='_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+const openingHours={
+    ["thu"]: {
       open: 12,
       close: 22,
     },
-    [days[4]]: {
+    ["fri"]: {
       open: 11,
       close: 23,
     },
-    [`day six`]: {
+    ["sat"]: {
       open: 0, // Open 24 hours
       close: 12+12,
     },
   };
-  console.log(openingHours);
   // Data needed for first part of the section
   const restaurant = {
   openingHours,//openingHours is a method
@@ -53,13 +50,47 @@ const flights =
   }
 
 };
+
+////////////////optional chaining(?.)/////////
+//clasic
+if(restaurant.openingHours&&restaurant.openingHours.mon){
+  console.log(restaurant.openingHours.mon);
+}
+
+//with optional chaining
+// console.log(restaurant.openingHours?.mon?.open);
+//example
+const days =['mon','tue','wed','thu','fri','sat','sun'];
+
+for (const day of days) {
+  const open= restaurant.openingHours[day]?.open ?? 'Closed'
+  console.log(`in ${day} we open at ${open}`);
+}
+
+////metthods
+console.log(restaurant.order?.(0,1)??'Methods does not exist');// exist
+console.log(restaurant.ordeRisotto?.(0,1)??'Methods does not exist');//does't exist
+//Arrays
+const users =[{name:'jonas',email:"email@email.com"}];
+// const users=[] //with this console.log below display 'User array empty"
+console.log(users[0]?.name??'User array empty');// display jonas
+//clasic
+if(users.length>0)console.log(users[0].name);else
+console.log('user array empty');
+
+
 /////////////////////////for of loop///////////////
-const menu= [...restaurant.starterMenu,...restaurant.mainMenu];
-for(const item of menu) console.log(item);
+// const menu= [...restaurant.starterMenu,...restaurant.mainMenu];
+// for(const item of menu) console.log(item);
 
-for (const item of menu.entries())  console.log(item[0],item[1]);
+// for (const item of menu.entries())  console.log(item[0],item[1]);
 
-for(const [i,el] of menu.entries())console.log(`${i}: ${el}`);
+// for(const [i,el] of menu.entries())console.log(`${i}: ${el}`);
+
+
+
+
+
 // /////////////////nullish coalescing operator
 
 // restaurant.numGuests=0;    
