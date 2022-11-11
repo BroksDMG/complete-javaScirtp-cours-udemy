@@ -51,32 +51,120 @@ const openingHours={
 
 };
 
-////////////////optional chaining(?.)/////////
-//clasic
-if(restaurant.openingHours&&restaurant.openingHours.mon){
-  console.log(restaurant.openingHours.mon);
-}
+//////////////////////Maps//////////////////////
+const rest = new Map();
+rest.set('name','Classico Italiano');
+rest.set(1,'Firenze, Italy');
+console.log(rest.set(2,'Lisban, Portugal'));
 
-//with optional chaining
-// console.log(restaurant.openingHours?.mon?.open);
-//example
-const days =['mon','tue','wed','thu','fri','sat','sun'];
+rest
+  .set('categories',['Italian','Pizzeria',
+'Vegetarian','Organic'])
+  .set('open',11)
+  .set('close',23)
+  .set(true,"we are open!")
+  .set(false,"we are closed");
+console.log(rest);
 
-for (const day of days) {
-  const open= restaurant.openingHours[day]?.open ?? 'Closed'
-  console.log(`in ${day} we open at ${open}`);
-}
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get('1'));
 
-////metthods
-console.log(restaurant.order?.(0,1)??'Methods does not exist');// exist
-console.log(restaurant.ordeRisotto?.(0,1)??'Methods does not exist');//does't exist
-//Arrays
-const users =[{name:'jonas',email:"email@email.com"}];
-// const users=[] //with this console.log below display 'User array empty"
-console.log(users[0]?.name??'User array empty');// display jonas
-//clasic
-if(users.length>0)console.log(users[0].name);else
-console.log('user array empty');
+const time=8;
+console.log(rest.get(time>rest.get('open')&&time
+<rest.get('close')));
+
+
+const arr=[1,2];
+console.log(rest.has('categories'));
+rest.delete(2);
+rest.set(arr,'test');
+console.log(rest);
+console.log(rest.size);
+console.log(rest.get(arr));
+// ///////////////////Set///////////////////////
+// const orderSet= new Set([
+//   'Pizza',
+//   'Pasta',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
+// console.log(orderSet);
+// console.log(new Set('Jonas'));
+// console.log(new Set('Joonaass'));
+
+
+// console.log(orderSet.size);
+// console.log(orderSet.has('Pizza'));
+// console.log(orderSet.has('Bread'));
+// orderSet.add('Garlic Bread');
+// orderSet.add('Garlic Bread');
+// orderSet.delete('Risotto');
+// // orderSet.clear();
+// console.log(orderSet);
+
+
+// //example
+// const staff= ['Waiter','chef','Waiter',
+// 'chef','Waiter','Manager']
+// const staffUnique=[...new Set(staff)];
+// console.log(staffUnique);
+
+// console.log(
+//   new Set(['Waiter','chef','Waiter','chef',
+//   'Waiter','Manager']).size
+// );
+
+// //////////////// looping object //////////
+// //property name
+// const properties = Object.keys(openingHours)
+// let openStr=`we are open on ${properties.length} days: `;
+//  for (const day of properties) {
+//   openStr+=`${day}, `;
+//  }
+// //  console.log(openStr);
+//  //Property value
+// // const value = Object.keys(openingHours);
+// // console.log(value);
+// // Entries object]
+// const entries= Object.entries(openingHours);
+// console.log(entries);
+
+// for (const [day,{open,close}] of entries) {
+//   console.log(`On ${day} we open at ${open} and close
+//   at ${close}`);
+// }
+
+
+
+// ////////////////optional chaining(?.)/////////
+// //clasic
+// if(restaurant.openingHours&&restaurant.openingHours.mon){
+//   console.log(restaurant.openingHours.mon);
+// }
+
+// //with optional chaining
+// // console.log(restaurant.openingHours?.mon?.open);
+// //example
+// const days =['mon','tue','wed','thu','fri','sat','sun'];
+
+// for (const day of days) {
+//   const open= restaurant.openingHours[day]?.open ?? 'Closed'
+//   console.log(`in ${day} we open at ${open}`);
+// }
+
+// ////metthods
+// console.log(restaurant.order?.(0,1)??'Methods does not exist');// exist
+// console.log(restaurant.ordeRisotto?.(0,1)??'Methods does not exist');//does't exist
+// //Arrays
+// const users =[{name:'jonas',email:"email@email.com"}];
+// // const users=[] //with this console.log below display 'User array empty"
+// console.log(users[0]?.name??'User array empty');// display jonas
+// //clasic
+// if(users.length>0)console.log(users[0].name);else
+// console.log('user array empty');
 
 
 /////////////////////////for of loop///////////////
