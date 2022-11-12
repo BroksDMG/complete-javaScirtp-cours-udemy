@@ -50,38 +50,79 @@ const openingHours={
   }
 
 };
+/////////////////////////Maps iteration////////////
+const qusetion = new Map([
+  ['question',`What is the best programing language
+  in the world?`],
+  [1,'c'],
+  [2,'java'],
+  [3,'JavaScript'],
+  ['correct',3],
+  [true,'Correct!🎉'],
+  [false,'Try again'],
+]);
+console.log(qusetion);
 
-//////////////////////Maps//////////////////////
-const rest = new Map();
-rest.set('name','Classico Italiano');
-rest.set(1,'Firenze, Italy');
-console.log(rest.set(2,'Lisban, Portugal'));
+//Convert obj to map
+console.log(Object.entries(openingHours));
+const hoursMap= new Map(Object.entries(openingHours));
+console.log(hoursMap);
 
-rest
-  .set('categories',['Italian','Pizzeria',
-'Vegetarian','Organic'])
-  .set('open',11)
-  .set('close',23)
-  .set(true,"we are open!")
-  .set(false,"we are closed");
-console.log(rest);
+// //quiz app with map itertion
+// console.log(qusetion.get('question'));
+// for(const[key,value]of qusetion){
+//   if(typeof key==='Number'){
+//     console.log(`Answer ${key}:
+//     ${value}`);
+//   }
+// }
+// const answer= Number(prompt('Your answer'));
+// console.log(answer);
+// console.log(qusetion.get(qusetion.get('correct')===answer));
 
-console.log(rest.get('name'));
-console.log(rest.get(true));
-console.log(rest.get('1'));
+//convert map to array:
+// const mapToArray= [...qusetion];
+// console.log(mapToArray);
 
-const time=8;
-console.log(rest.get(time>rest.get('open')&&time
-<rest.get('close')));
+console.log([...qusetion.entries()]);
+console.log(qusetion.keys());
+console.log([...qusetion.keys()]);
+console.log([...qusetion.values()]);
 
 
-const arr=[1,2];
-console.log(rest.has('categories'));
-rest.delete(2);
-rest.set(arr,'test');
-console.log(rest);
-console.log(rest.size);
-console.log(rest.get(arr));
+// if(answer===3){console.log( qusetion.get(true))}
+// else if(answer===2||answer===1){console.log( qusetion.get(false))};
+// //////////////////////Maps//////////////////////
+// const rest = new Map();
+// rest.set('name','Classico Italiano');
+// rest.set(1,'Firenze, Italy');
+// console.log(rest.set(2,'Lisban, Portugal'));
+
+// rest
+//   .set('categories',['Italian','Pizzeria',
+// 'Vegetarian','Organic'])
+//   .set('open',11)
+//   .set('close',23)
+//   .set(true,"we are open!")
+//   .set(false,"we are closed");
+// console.log(rest);
+
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
+// console.log(rest.get('1'));
+
+// const time=8;
+// console.log(rest.get(time>rest.get('open')&&time
+// <rest.get('close')));
+
+
+// const arr=[1,2];
+// console.log(rest.has('categories'));
+// rest.delete(2);
+// rest.set(arr,'test');
+// console.log(rest);
+// console.log(rest.size);
+// console.log(rest.get(arr));
 // ///////////////////Set///////////////////////
 // const orderSet= new Set([
 //   'Pizza',

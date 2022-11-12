@@ -41,46 +41,89 @@ const game = {
     team2: 6.5,
     },
     };
+/////////////////////coding-chalange#3///////////////
 
-//////////////////coding-challange#2/////////////
+const gameEvents=new Map([
+    [17,'⚽Goal'],
+    [36,'🔂Substitution'],
+    [47,'⚽Goal'],
+    [61,'🔂Substitution'],
+    [64,'🔶Yellow card'],
+    [69,'🔴Red card'],
+    [70,'🔂Substitution'],
+    [72,'🔂Substitution'],
+    [76,'⚽Goal'],
+    [80,'⚽Goal'],
+    [92,'🔶Yellow card'],
+    
+]);
 //task1
-const gools= Object.entries(game.scored);
-let goolsStr='';
-for (const [gool,player] of gools) {
-    console.log(`Goal ${gool}: ${player}`);
-}
-//task2
-const averageOdd= Object.values(game.odds);
-console.log(averageOdd);
-console.log(averageOdd[0]*averageOdd[2]/2);
-//task3
-const propertiesOdd= Object.entries(game.odds);
+const [...events] = new Set(gameEvents.values());
+console.log(events);
+///task2
+gameEvents.delete(64);
+console.log(gameEvents);
+///task3
+let count=0;
+let gameTime=90;
+for(const [event] of gameEvents)count++;
 
-for (const [name,value] of propertiesOdd) {
-    let str =name==='x'?'draw':`victory ${game[name]}`
+const avarageGameEvents=gameTime/count;
+console.log(`An event happened, on avarage, evry
+ ${avarageGameEvents} minutes`);
+///task4
+let half ='FIRST HALF';
+for(const [event,value]of gameEvents){
+    if(event>45) half="SECOND HALF" 
+    console.log(`[${half}]${event}: ${value}`);
+
+}
+
+
+
+
+
+
+
+// //////////////////coding-challange#2/////////////
+// //task1
+// const gools= Object.entries(game.scored);
+// let goolsStr='';
+// for (const [gool,player] of gools) {
+//     console.log(`Goal ${gool}: ${player}`);
+// }
+// //task2
+// const averageOdd= Object.values(game.odds);
+// console.log(averageOdd);
+// console.log(averageOdd[0]*averageOdd[2]/2);
+// //task3
+// const propertiesOdd= Object.entries(game.odds);
+
+// for (const [name,value] of propertiesOdd) {
+//     let str =name==='x'?'draw':`victory ${game[name]}`
         
-    console.log(`Odd of ${str}`);
-};
+//     console.log(`Odd of ${str}`);
+// };
 
-console.log(propertiesOdd);
-//task4
-/*/scorers{
-    0:lewandowski,
-    1:gnarby,
-    2:lewandowski,
-    3:hummels,
-}
-*/
-const {...scorers}=game.scored;
-Object.keys(scorers)
+// console.log(propertiesOdd);
+// //task4
+// /*/scorers{
+//     0:lewandowski,
+//     1:gnarby,
+//     2:lewandowski,
+//     3:hummels,
+// }
+// */
+// const {...scorers}=game.scored;
+// Object.keys(scorers)
 
-console.log(scorers);
-console.log(Object.keys(scorers));
-for (const prop of scorers) {
-    // prop+=Object.values(game.scored)
-}
+// console.log(scorers);
+// console.log(Object.keys(scorers));
+// for (const prop of scorers) {
+//     // prop+=Object.values(game.scored)
+// }
 
-console.log(scorers);
+// console.log(scorers);
 
 
 //////////////////coding-challange#1/////////////
