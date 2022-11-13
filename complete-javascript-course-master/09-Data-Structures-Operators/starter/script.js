@@ -50,23 +50,110 @@ const openingHours={
   }
 
 };
-/////////////////////////Maps iteration////////////
-const qusetion = new Map([
-  ['question',`What is the best programing language
-  in the world?`],
-  [1,'c'],
-  [2,'java'],
-  [3,'JavaScript'],
-  ['correct',3],
-  [true,'Correct!🎉'],
-  [false,'Try again'],
-]);
-console.log(qusetion);
+/////////////////////////////Working with strings#2/////
 
-//Convert obj to map
-console.log(Object.entries(openingHours));
-const hoursMap= new Map(Object.entries(openingHours));
-console.log(hoursMap);
+const passenger = 'jonas';
+const passangerLower= passenger.toLowerCase();
+const passengerCorrect= 
+passangerLower[0].toUpperCase()+ passangerLower.
+slice(1);
+console.log(passengerCorrect);
+
+const email ='hello@jonas.is';
+const loginEmail ='Hello@Jonas.Io \n';
+
+// const loweEmail = loginEmail.toLocaleLowerCase();
+// const trimmedEmail= loginEmail.trim();
+/// trim is deleting all " "before string and after stirng
+const normalizedEmail = loginEmail.toLocaleLowerCase().
+trim();
+console.log(normalizedEmail);
+console.log(email===normalizedEmail);
+
+////replacing'
+const priceGB = '288,97£'
+const priceUS =priceGB.replace('£','$').replace(',',('.'));
+console.log(priceUS);
+
+const announcement = 'All passengers come to boarding door 23. Boarding door 23!';
+//replace first string
+console.log(announcement.replace('door','gate'));
+//in future replacing all strings
+// console.log(announcement.replaceAll('door','gate'));
+///now replacing all strings 
+console.log(announcement.replace(/door/g,'gate'));
+
+/////boollens
+const plane = 'AirBus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+if(plane.startsWith('AirBus')&&plane.endsWith('neo')){
+  console.log('Part of the NEW ARitbus Family');
+}
+const chechBaggage= function(items){
+  const baggage = items.toLowerCase();
+  if(baggage.includes('knife')||baggage.includes('gun')){
+    console.log('You are NOT allowed on board');
+  }else console.log('Welcome board!');
+};
+chechBaggage('I have a laptop, some Food and a pocket Knife')
+chechBaggage('Socks and camera');
+chechBaggage('Got some snacks and gun for protection');
+// ////////////////////////////Workign with strings#1//////
+// const airline = `Tap Air Portugal`;
+// const plane ='A320';
+
+// console.log(plane[0]);
+// console.log(plane[1]);
+// console.log(plane[2]);
+// console.log('B737'[0]);
+
+// console.log(airline.length);
+// console.log('B737'.length);
+
+// console.log(airline.indexOf('r'));
+// console.log(airline.lastIndexOf('r'));
+// console.log(airline.indexOf('Portugal'));//size is important
+
+// console.log(airline.slice(4));
+// console.log(airline.slice(4,7));
+
+// console.log(airline.slice(0,airline.indexOf(' ')));
+// console.log(airline.slice(airline.indexOf(' ')+1));
+
+// console.log(airline.slice(-2));
+// console.log(airline.slice(1,-1));
+
+// //example caught
+// const checkMiddleSeat= function(seat){
+//   const s= seat.slice(-1);
+//   s==='B'||s==='E'?console.log('You got the middle seat👲'):
+//   console.log("You are lucky🎅");
+// };
+
+// checkMiddleSeat('11B');
+// checkMiddleSeat('23C');
+// checkMiddleSeat('3E');
+
+
+// /////////////////////////Maps iteration////////////
+// const qusetion = new Map([
+//   ['question',`What is the best programing language
+//   in the world?`],
+//   [1,'c'],
+//   [2,'java'],
+//   [3,'JavaScript'],
+//   ['correct',3],
+//   [true,'Correct!🎉'],
+//   [false,'Try again'],
+// ]);
+// console.log(qusetion);
+
+// //Convert obj to map
+// console.log(Object.entries(openingHours));
+// const hoursMap= new Map(Object.entries(openingHours));
+// console.log(hoursMap);
 
 // //quiz app with map itertion
 // console.log(qusetion.get('question'));
@@ -84,10 +171,10 @@ console.log(hoursMap);
 // const mapToArray= [...qusetion];
 // console.log(mapToArray);
 
-console.log([...qusetion.entries()]);
-console.log(qusetion.keys());
-console.log([...qusetion.keys()]);
-console.log([...qusetion.values()]);
+// console.log([...qusetion.entries()]);
+// console.log(qusetion.keys());
+// console.log([...qusetion.keys()]);
+// console.log([...qusetion.values()]);
 
 
 // if(answer===3){console.log( qusetion.get(true))}
