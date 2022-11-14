@@ -41,43 +41,77 @@ const game = {
     team2: 6.5,
     },
     };
-/////////////////////coding-chalange#3///////////////
 
-const gameEvents=new Map([
-    [17,'⚽Goal'],
-    [36,'🔂Substitution'],
-    [47,'⚽Goal'],
-    [61,'🔂Substitution'],
-    [64,'🔶Yellow card'],
-    [69,'🔴Red card'],
-    [70,'🔂Substitution'],
-    [72,'🔂Substitution'],
-    [76,'⚽Goal'],
-    [80,'⚽Goal'],
-    [92,'🔶Yellow card'],
+////////////////////////coding-chalange#4///////////////
+document.body.append(document.createElement('textarea'))
+document.body.append(document.createElement('button'))
+const button =document.querySelector('button');
+
+button.addEventListener('click',function(){
+    const text = document.querySelector('textarea').value
+    const textNormalized =text.toLowerCase().split('\n')
+    let count=0;
+    for(const word of textNormalized){
+        //////['underscore','case'];
+        count++;
+        const split_= word.trim().split('_');
+        const secondSplit = split_[1];
+        const secondSplitToUpper= secondSplit[0].toUpperCase();
+        const doneText1= [`${split_[0]}`,`${secondSplitToUpper}`,`${secondSplit.slice(1)}`].join('')
+        const te=`✅`.repeat(count)
+        const doneText=`${doneText1.padEnd(20,' ')}`+`${te}`
+        console.log(doneText);
+    }
+   
+      
+})
+
+
+/*
+underscore_case
+ first_name
+Some_Variable
+ calculate_AGE
+delayed_departure
+*/
+
+// /////////////////////coding-chalange#3///////////////
+
+// const gameEvents=new Map([
+//     [17,'⚽Goal'],
+//     [36,'🔂Substitution'],
+//     [47,'⚽Goal'],
+//     [61,'🔂Substitution'],
+//     [64,'🔶Yellow card'],
+//     [69,'🔴Red card'],
+//     [70,'🔂Substitution'],
+//     [72,'🔂Substitution'],
+//     [76,'⚽Goal'],
+//     [80,'⚽Goal'],
+//     [92,'🔶Yellow card'],
     
-]);
-//task1
-const [...events] = new Set(gameEvents.values());
-console.log(events);
-///task2
-gameEvents.delete(64);
-console.log(gameEvents);
-///task3
-let count=0;
-let gameTime=90;
-for(const [event] of gameEvents)count++;
+// ]);
+// //task1
+// const [...events] = new Set(gameEvents.values());
+// console.log(events);
+// ///task2
+// gameEvents.delete(64);
+// console.log(gameEvents);
+// ///task3
+// let count=0;
+// let gameTime=90;
+// for(const [event] of gameEvents)count++;
 
-const avarageGameEvents=gameTime/count;
-console.log(`An event happened, on avarage, evry
- ${avarageGameEvents} minutes`);
-///task4
-let half ='FIRST HALF';
-for(const [event,value]of gameEvents){
-    if(event>45) half="SECOND HALF" 
-    console.log(`[${half}]${event}: ${value}`);
+// const avarageGameEvents=gameTime/count;
+// console.log(`An event happened, on avarage, evry
+//  ${avarageGameEvents} minutes`);
+// ///task4
+// let half ='FIRST HALF';
+// for(const [event,value]of gameEvents){
+//     if(event>45) half="SECOND HALF" 
+//     console.log(`[${half}]${event}: ${value}`);
 
-}
+// }
 
 
 
