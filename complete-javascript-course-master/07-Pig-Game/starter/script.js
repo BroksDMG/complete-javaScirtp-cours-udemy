@@ -73,7 +73,7 @@ btnHold.addEventListener('click',function(){
     score[currentPlayer]+=current;
     //display score
     document.getElementById(`score--${currentPlayer}`).textContent=score[currentPlayer];
-    if(score[currentPlayer]>=20){
+    if(score[currentPlayer]>=100){
         winPlayer();   
     }else resetCurrent()
 

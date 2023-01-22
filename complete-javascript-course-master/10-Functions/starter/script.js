@@ -134,3 +134,14 @@ book.apply(swiss,[528,'George Cooper'])
 book.call(swiss,...[314,"Megan Cooper"])
 book.call(swiss,[314,"Adam Cooper"])
 console.log(swiss);
+
+//// bind method
+const bookEW= book.bind(eurowings);
+const bookLH= book.bind(lufthsnsa);
+const bookLX= book.bind(swiss);
+
+bookEW(23,'Steven Williams');
+const bookEw23= book.bind(eurowings, 23);
+bookEw23('Jonas Schmedtmann');
+bookEw23('Marta Cooper');
+///////////////

@@ -42,29 +42,29 @@ const game = {
     },
     };
 
-////////////////////////coding-chalange#4///////////////
-document.body.append(document.createElement('textarea'))
-document.body.append(document.createElement('button'))
-const button =document.querySelector('button');
+// ////////////////////////coding-chalange#4///////////////
+// document.body.append(document.createElement('textarea'))
+// document.body.append(document.createElement('button'))
+// const button =document.querySelector('button');
 
-button.addEventListener('click',function(){
-    const text = document.querySelector('textarea').value
-    const textNormalized =text.toLowerCase().split('\n')
-    let count=0;
-    for(const word of textNormalized){
-        //////['underscore','case'];
-        count++;
-        const split_= word.trim().split('_');
-        const secondSplit = split_[1];
-        const secondSplitToUpper= secondSplit[0].toUpperCase();
-        const doneText1= [`${split_[0]}`,`${secondSplitToUpper}`,`${secondSplit.slice(1)}`].join('')
-        const te=`✅`.repeat(count)
-        const doneText=`${doneText1.padEnd(20,' ')}`+`${te}`
-        console.log(doneText);
-    }
+// button.addEventListener('click',function(){
+//     const text = document.querySelector('textarea').value
+//     const textNormalized =text.toLowerCase().split('\n')
+//     let count=0;
+//     for(const word of textNormalized){
+//         //////['underscore','case'];
+//         count++;
+//         const split_= word.trim().split('_');
+//         const secondSplit = split_[1];
+//         const secondSplitToUpper= secondSplit[0].toUpperCase();
+//         const doneText1= [`${split_[0]}`,`${secondSplitToUpper}`,`${secondSplit.slice(1)}`].join('')
+//         const te=`✅`.repeat(count)
+//         const doneText=`${doneText1.padEnd(20,' ')}`+`${te}`
+//         console.log(doneText);
+//     }
    
       
-})
+// })
 
 
 /*
