@@ -148,12 +148,14 @@ bookEw23('Marta Cooper');
 
 lufthsnsa.planes = 300;
 lufthsnsa.buyPlane=function(){
+    
     console.log(this);
-
     this.planes++;
     console.log(this.planes);
 }
-// lufthsnsa.buyPlane()
+// const test=lufthsnsa.buyPlane()
+
+
 document
 .querySelector('.buy')
 .addEventListener('click',lufthsnsa.buyPlane.bind(lufthsnsa))
