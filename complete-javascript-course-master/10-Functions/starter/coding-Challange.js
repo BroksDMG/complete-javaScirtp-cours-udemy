@@ -24,3 +24,8 @@ document
 .querySelector('.poll')
 .addEventListener('click',registerNewAnswer);
 // registerNewAnswer()
+function displayResults(type="array"){
+    if(type==='array')console.log('array');
+    if(type==='string')console.log('Poll result are 13,2,4,1');
+}
+displayResults('string');
