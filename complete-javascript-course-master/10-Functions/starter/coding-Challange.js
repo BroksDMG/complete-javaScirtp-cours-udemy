@@ -6,26 +6,28 @@ const poll={
     updateAnswer(value){
         if(value<0||value>4)return
             this.answer[value]++
-        console.log(this.answer);
+        // console.log(this.answer);
+    },
+    registerNewAnswer(){
+        const option =Number( prompt(
+       `What is your favourite programming language?
+        0: JavaScript
+        1: Python
+        2: Rust
+        3: C++`))
+        
+        poll.updateAnswer.call(poll,option)
+        displayResults()
+       },
+       displayResults(type="array"){
+        if(type==='array')console.log('array');
+        if(type==='string')console.log('Poll result are 13,2,4,1');
     }
 };
 
-const registerNewAnswer=function(){
- const option =Number( prompt(
-`What is your favourite programming language?
- 0: JavaScript
- 1: Python
- 2: Rust
- 3: C++`))
- 
- poll.updateAnswer.call(poll,option)
-}
+
 document
 .querySelector('.poll')
-.addEventListener('click',registerNewAnswer);
+.addEventListener('click',poll.registerNewAnswer.bind(poll));
 // registerNewAnswer()
-function displayResults(type="array"){
-    if(type==='array')console.log('array');
-    if(type==='string')console.log('Poll result are 13,2,4,1');
-}
-displayResults('string');
+
