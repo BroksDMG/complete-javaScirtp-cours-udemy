@@ -65,11 +65,11 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
 
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -120,23 +120,41 @@ const currencies = new Map([
 // console.log('jonas'.at(-1));
 
 
-/////////////// foreach method
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// /////////////// foreach method
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-for (const [i,movement] of movements.entries()){
-  if(movement>0){
-    console.log(`Movment ${i+1}: You deposited ${movement}`);
-  }else{
-    console.log(`Movment ${i+1}: You withdraw ${movement}`);
-  }
-}
+// for (const [i,movement] of movements.entries()){
+//   if(movement>0){
+//     console.log(`Movment ${i+1}: You deposited ${movement}`);
+//   }else{
+//     console.log(`Movment ${i+1}: You withdraw ${movement}`);
+//   }
+// }
 
-//forEach
+// //forEach
 
-movements.forEach(function(movement,i,arr){
-  if(movement>0){
-    console.log(`Movment ${i+1}: You deposited ${movement}`);
-  }else{
-    console.log(`Movment ${i+1}: You withdraw ${movement}`);
-  }
+// movements.forEach(function(movement,i,arr){
+//   if(movement>0){
+//     console.log(`Movment ${i+1}: You deposited ${movement}`);
+//   }else{
+//     console.log(`Movment ${i+1}: You withdraw ${movement}`);
+//   }
+// })
+
+///forEach with maps and Sets
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+currencies.forEach(function(value,key,map){
+  console.log(`${key}: ${value}`);
+
+})
+//Sets 
+
+const currenciesUnique = new Set(['USD','GBP','USD','EUR','EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function(value,_,Set){
+  console.log(`${value}: ${value}`);
 })
