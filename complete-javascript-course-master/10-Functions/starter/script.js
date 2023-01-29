@@ -189,11 +189,24 @@
 // ();
 
 //////////////////// Closures /////////////////
-const secureBooking = function(){
-    let passenger = 0;
+// const secureBooking = function(){
+//     let passenger = 0;
 
-    return function(){
-        passenger++;
-        console.log(`${passenger} passengers`);
-    }
+//     return function(){
+//         passenger++;
+//         console.log(`${passenger} passengers`);
+//     }
+// }
+// const booker = secureBooking();
+
+// booker();
+// booker();
+// booker();
+
+/////////////////closures more example
+let f;
+
+const g = function(){
+    const a=23;
+    
 }
