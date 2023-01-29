@@ -204,9 +204,48 @@
 // booker();
 
 /////////////////closures more example
+
+// example 1
 let f;
 
 const g = function(){
     const a=23;
-    
+    console.log(a);
+    f=function(){
+        console.log(a*2);
+    }
 }
+
+const h =function(){
+    const b=777
+    f=function(){
+        console.log(b*2);
+    }
+}
+
+g()
+f()
+console.dir(f);
+//Re-asigning f functions 
+h()
+f()
+console.dir(f);
+
+//example 2
+const boardPasengers=function(n,wait){
+    const perGroup =n/3
+    setTimeout(function(){
+        console.log(`We are now boarding all ${n} passengers`);
+        console.log(`there are 3 groups, each with ${perGroup} passengers`);
+    },wait*1000)
+
+    console.log(`will start boarding in ${wait} seconds`);
+}
+
+boardPasengers(180,3);
+
+ 
+
+
+
+
