@@ -175,12 +175,25 @@
 // console.log(addTaxWithVAT(100));
 // console.log(addTaxWithVAT(23));
 
-const runOnce =function(){
-    console.log("this will never run again");
-}
-runOnce();
+// const runOnce =function(){
+//     console.log("this will never run again");
+// }
+// runOnce();
 
-//II
-(function(){
-    console.log('this will never run again');
-})();
+// //IIFE
+// (function(){
+//     console.log('this will never run again');
+// })();
+
+// (()=>{console.log('this will also never run again');})
+// ();
+
+//////////////////// Closures /////////////////
+const secureBooking = function(){
+    let passenger = 0;
+
+    return function(){
+        passenger++;
+        console.log(`${passenger} passengers`);
+    }
+}
