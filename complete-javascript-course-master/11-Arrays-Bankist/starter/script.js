@@ -174,3 +174,8 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function(value,_,Set){
   console.log(`${value}: ${value}`);
 })
+
+const eurToUsd=1.1;
+const movementUSD= movements.map(function(mov){
+  return mov *eurToUsd;
+})
