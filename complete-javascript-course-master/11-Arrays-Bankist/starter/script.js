@@ -184,11 +184,23 @@ const movementUSDfor =[];
 for(const mov of movements){
   movementUSDfor.push(mov*eurToUsd);
 }
-console.log(movementUSDfor);
+// console.log(movementUSDfor);
 const movementUSD = movements.map(mov=>mov*eurToUsd);
-console.log(movements);
-console.log(movementUSD);
+// console.log(movements);
+// console.log(movementUSD);
 
 const movementDescriptons = movements.map((mov,i)=>
 `Movment ${i+1}: You ${mov>0?"deposit":"withdrew"} ${Math.abs(mov)}`)
-console.log(movementDescriptons);
+// console.log(movementDescriptons);
+
+///inicjały z obiektów
+function ddd (accs){
+accs.forEach(acc=>{
+  acc.username=acc.owner
+  .split(' ')
+  .map(names=>names[0])
+  .join('')
+})}
+ddd(accounts);
+console.log(accounts); 
+
