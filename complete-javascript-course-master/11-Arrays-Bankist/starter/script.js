@@ -202,5 +202,15 @@ accs.forEach(acc=>{
   .join('')
 })}
 ddd(accounts);
-console.log(accounts); 
+// console.log(accounts); 
+/////////////////////filter method ////////////////
+const deposit = movements.filter(mov=>mov>0);
+console.log(deposit);
+const depositMap = movements.map(function (mov){
+  if (mov>0) return mov
+});
+console.log(depositMap);
 
+const withdraws =movements.filter(function(mov){return mov<0});
+const withdrawsAbs =withdraws.map(wid=>Math.abs(wid))
+console.log(withdrawsAbs);
