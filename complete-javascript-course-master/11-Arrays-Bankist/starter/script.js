@@ -77,6 +77,22 @@ const displayMovments = function(movements){
 }
 displayMovments(account1.movements)
 
+const calcDisplayBalance = function(movement){
+  const balance = movement.reduce((acc,mov)=>acc+mov,0);
+  labelBalance.textContent=`${balance} EUR`;
+}
+calcDisplayBalance(account1.movements);
+///inicjały z obiektów
+function createUsernames (accs){
+  accs.forEach(acc=>{
+    acc.username=acc.owner
+    .split(' ')
+    .map(names=>names[0])
+    .join('')
+  })}
+ createUsernames(accounts);
+  // console.log(accounts); 
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -193,16 +209,7 @@ const movementDescriptons = movements.map((mov,i)=>
 `Movment ${i+1}: You ${mov>0?"deposit":"withdrew"} ${Math.abs(mov)}`)
 // console.log(movementDescriptons);
 
-///inicjały z obiektów
-function ddd (accs){
-accs.forEach(acc=>{
-  acc.username=acc.owner
-  .split(' ')
-  .map(names=>names[0])
-  .join('')
-})}
-ddd(accounts);
-// console.log(accounts); 
+
 /////////////////////filter method ////////////////
 const deposit = movements.filter(mov=>mov>0);
 console.log(deposit);
@@ -214,3 +221,20 @@ console.log(depositMap);
 const withdraws =movements.filter(function(mov){return mov<0});
 const withdrawsAbs =withdraws.map(wid=>Math.abs(wid))
 console.log(withdrawsAbs);
+////////////////the reduce method ////////////////
+const balance = movements.reduce(function(acc,cur,i,arr){
+  console.log(`Iteration ${i} :${acc} ,${cur}`);
+  return acc+cur},0)
+console.log(movements);
+console.log(balance);
+
+let balance2 = 0;
+for(const mov of movements) balance2+=mov;
+console.log(balance2);
+
+//maximum value
+const max = movements.reduce((acc,mov)=>{
+  if(acc>mov)return acc
+  else return mov
+})
+console.log(max);
