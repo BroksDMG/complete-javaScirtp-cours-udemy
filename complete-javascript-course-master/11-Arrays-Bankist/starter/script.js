@@ -87,7 +87,7 @@ displayMovments(account1.movements)
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -158,24 +158,37 @@ displayMovments(account1.movements)
 // })
 
 ///forEach with maps and Sets
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-]);
-currencies.forEach(function(value,key,map){
-  console.log(`${key}: ${value}`);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+// currencies.forEach(function(value,key,map){
+//   console.log(`${key}: ${value}`);
 
-})
-//Sets 
+// })
+// //Sets 
 
-const currenciesUnique = new Set(['USD','GBP','USD','EUR','EUR']);
-console.log(currenciesUnique);
-currenciesUnique.forEach(function(value,_,Set){
-  console.log(`${value}: ${value}`);
-})
+// const currenciesUnique = new Set(['USD','GBP','USD','EUR','EUR']);
+// console.log(currenciesUnique);
+// currenciesUnique.forEach(function(value,_,Set){
+//   console.log(`${value}: ${value}`);
+// })
 
 const eurToUsd=1.1;
-const movementUSD= movements.map(function(mov){
-  return mov *eurToUsd;
-})
+// const movementUSD= movements.map(function(mov){
+//   return mov *eurToUsd;
+// })
+
+const movementUSDfor =[];
+for(const mov of movements){
+  movementUSDfor.push(mov*eurToUsd);
+}
+console.log(movementUSDfor);
+const movementUSD = movements.map(mov=>mov*eurToUsd);
+console.log(movements);
+console.log(movementUSD);
+
+const movementDescriptons = movements.map((mov,i)=>
+`Movment ${i+1}: You ${mov>0?"deposit":"withdrew"} ${Math.abs(mov)}`)
+console.log(movementDescriptons);
