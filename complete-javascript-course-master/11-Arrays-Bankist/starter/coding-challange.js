@@ -18,12 +18,23 @@ function checkDogs (dogsJulia,dogsKate){
 console.log('///////////////////ANOTHER DATA//////////////////');
 // checkDogs(juliData2,kateData2);
 
-function calcAveratgeHumanAge (dogAges){
-    const calc =dogAges.map(age=>age<=2?2*age:16+age*4)
-    const leesThan18 =calc.filter(age=>age>=18)
-    const averages =leesThan18.reduce((acc,age)=>acc+age/leesThan18.length,0)
-    console.log(calc);
-    console.log(leesThan18);
+// function calcAveratgeHumanAge (dogAges){
+//     const calc =dogAges.map(age=>age<=2?2*age:16+age*4)
+//     const leesThan18 =calc.filter(age=>age>=18)
+//     const averages =leesThan18.reduce((acc,age)=>acc+age/leesThan18.length,0)
+//     console.log(calc);
+//     console.log(leesThan18);
+//     return averages
+// }
+// console.log(calcAveratgeHumanAge([5, 2, 4, 1, 15, 8, 3]));
+// console.log(calcAveratgeHumanAge([16, 6, 10, 5, 6, 1, 4]));
+// ///rewrite function
+
+const calcAveratgeHumanAge=(dogAge)=>{
+    const averages=dogAge
+        .map(age=>age<=2?2*age:16+age*4)
+        .filter(age=>age>=18)
+        .reduce((acc,age,i,arr)=>acc+age/arr.length,0)
     return averages
 }
 console.log(calcAveratgeHumanAge([5, 2, 4, 1, 15, 8, 3]));
