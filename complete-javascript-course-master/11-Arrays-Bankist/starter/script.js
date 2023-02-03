@@ -96,7 +96,6 @@ const calcDisplaySummary = function(movements){
   const iterest =movements.filter(mov=>mov>0)
     .map(deposit=>(deposit*1.2)/100)
     .filter((int,i,arr)=>{
-      console.log(arr);
       return int>=i;
     })
     .reduce((acc,int)=>acc+int,0);
@@ -261,9 +260,24 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(max);
 /////////////chaining methods///////////
 
-const eurToUsd=1.1;
-const totalDepositsUSD= movements
-  .filter(mov=>mov>0)
-  .map(mov=>mov*eurToUsd)
-  .reduce((acc,mov)=>acc+mov,0)
-  console.log(totalDepositsUSD);
+// const eurToUsd=1.1;
+// const totalDepositsUSD= movements
+//   .filter(mov=>mov>0)
+//   .map(mov=>mov*eurToUsd)
+//   .reduce((acc,mov)=>acc+mov,0)
+//   console.log(totalDepositsUSD);
+
+///////////////find method///////////////
+// const firstWithdrawal = movements.find(mov=>mov<0);
+//   console.log(movements);
+//   console.log(firstWithdrawal);
+//   console.log(accounts);
+
+//   const account =accounts.find(acc=>acc.owner==='Jessica Davis');
+//   console.log(account);
+const drawls=[]
+movements.forEach(mov=>{if(mov<0)drawls.push(mov)});
+console.log(drawls);
+const result=[];
+accounts.forEach(acc=>{if(acc.owner==='Jessica Davis')result.push(acc);})
+console.log(result);
