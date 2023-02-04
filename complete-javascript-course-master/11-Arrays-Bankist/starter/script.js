@@ -76,9 +76,10 @@ const displayMovments = function(movements){
   })
 }
 
-const calcDisplayBalance = function(movement){
-  const balance = movement.reduce((acc,mov)=>acc+mov,0);
-  labelBalance.textContent=`${balance} €`;
+const calcDisplayBalance = function(acc){
+  acc.balance = acc.movements.reduce((acc,mov)=>acc+mov,0);
+  
+  labelBalance.textContent=`${acc.balance} €`;
 }
 ///inicjały z obiektów
 const calcDisplaySummary = function(acc){
@@ -111,7 +112,14 @@ function createUsernames (accs){
   })}
  createUsernames(accounts);
   // console.log(accounts); 
-
+const updateUI=function(acc){
+   ///display movment
+   displayMovments(acc.movements)
+   ///display balancex
+   calcDisplayBalance(acc)
+   ///display summary
+   calcDisplaySummary(acc)
+}
 let currentAccount;
 btnLogin.addEventListener('click',function(e){
   e.preventDefault();
@@ -124,14 +132,28 @@ btnLogin.addEventListener('click',function(e){
     /// clear inpu fields
     inputLoginUsername.value=inputLoginPin.value='';
     inputLoginPin.blur();
-    ///display movment
-    displayMovments(currentAccount.movements)
-    ///display balancex
-    calcDisplayBalance(currentAccount.movements)
-    ///display summary
-    calcDisplaySummary(currentAccount)
+    
+    updateUI(currentAccount);
   }
 })
+
+btnTransfer.addEventListener('click',function(e){
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc=accounts.find(acc=>acc.username===inputTransferTo.value) 
+  inputTransferAmount.value=inputTransferTo.value=''
+   if(amount>0&&
+      receiverAcc&&
+      currentAccount.balance>=amount&&
+      receiverAcc?.username!==currentAccount.username){
+        ///////doing a tranfser
+        console.log(`Transfer ${amount}`);
+        currentAccount.movements.push(-amount);
+        receiverAcc.movements.push(amount);
+        ////////update UI
+        updateUI(currentAccount);
+      }
+});
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
