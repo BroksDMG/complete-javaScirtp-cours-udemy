@@ -61,9 +61,12 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovments = function(movements){
+const displayMovments = function(movements,sort=false){
   containerMovements.innerHTML=''
-  movements.forEach(function(mov,i){
+
+  const movs=sort?movements.slice().sort((a,b)=>a-b):movements
+
+  movs.forEach(function(mov,i){
     const type = mov>0 ?"deposit":"withdrawal"
     const html =
   `
@@ -182,6 +185,12 @@ btnClose.addEventListener('click',function(e){
       containerApp.style.opacity=0;
     }
     inputCloseUsername.value=inputClosePin.value=''
+})
+let sorted=false;
+btnSort.addEventListener('click',function(e){
+  e.preventDefault();
+  displayMovments(currentAccount.movements,!sorted);
+  sorted=!sorted
 })
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -375,21 +384,74 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(movements.find(deposit));
 
 //////////////////////flat and flatMap/////////////////
-//flat
-const arr = [[1,2,3],[2,3,1],7,8]
-console.log(arr.flat());
+// //flat
+// const arr = [[1,2,3],[2,3,1],7,8]
+// console.log(arr.flat());
 
-const arrDeep= [[1,[2,3]],[2,[3,1]],7,8]  
-console.log(arrDeep.flat(2));
+// const arrDeep= [[1,[2,3]],[2,[3,1]],7,8]  
+// console.log(arrDeep.flat(2));
 
-const overalBalance =accounts
-  .map(acc=>acc.movements)
-  .flat()
-  .reduce((acc,mov)=>acc+mov,0)
-console.log(overalBalance);
+// const overalBalance =accounts
+//   .map(acc=>acc.movements)
+//   .flat()
+//   .reduce((acc,mov)=>acc+mov,0)
+// console.log(overalBalance);
 
-//flatMap
-const overalBalance2=accounts
-  .flatMap(acc=>acc.movements)
-  .reduce((acc,mov)=>acc+mov,0);
-console.log(overalBalance2);
+// //flatMap
+// const overalBalance2=accounts
+//   .flatMap(acc=>acc.movements)
+//   .reduce((acc,mov)=>acc+mov,0);
+// console.log(overalBalance2);
+
+// ////////////sorting arrays
+// ///strings
+// const owners= ['Jonas','Zach','Adam','Martha']
+// console.log(owners.sort());
+// console.log(owners);
+
+// ///Numbers
+// console.log(movements);
+// console.log(movements.sort());
+
+// //return <0,A,B(Keep order)
+// //return >0,B,A(Swich order)
+
+// //Ascending
+// // movements.sort((a,b)=>{
+// //   if(a>b)return-1;
+// //   if(a<b)return 1;
+// // })
+// movements.sort((a,b)=>a-b);
+// console.log(movements);
+// //Descending
+// // movements.sort((a,b)=>{
+// //   if(a>b)return 1;
+// //   if(a<b)return-1;
+// // })
+// movements.sort((a,b)=>b-a);
+// console.log(movements);
+///////////////more ways to creating and filling arrays
+//fill
+const arr=[1,2,3,4,5,6,7];
+console.log(new Array(1,2,3,4,5,6,7));
+const x =new Array(7)
+x.fill(1,3,5)
+x.fill(1);
+console.log(x);
+
+arr.fill(23,2,6);
+console.log(arr);
+//Array.from
+const y =Array.from({length:7},()=>1);
+console.log(y);
+const z =Array.from({length:7},(_,i)=>1+i);
+console.log(z);
+
+labelBalance.addEventListener('click',function(){
+  const movementUI=Array.from(
+    document.querySelectorAll('.movements__value'),
+    el=>Number(el.textContent.replace('€',''))
+  )
+    console.log(movementUI);
+  
+})
