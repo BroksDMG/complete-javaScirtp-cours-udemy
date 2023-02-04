@@ -352,24 +352,44 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // accounts.forEach(acc=>{if(acc.owner==='Jessica Davis')result.push(acc);})
 // console.log(result);
 
-///////////some and every method
-console.log(movements);
+// ///////////some and every method
+// console.log(movements);
 
-//EQUALITY
-console.log(movements.includes(-130));
-//CONDITION
-console.log(movements.some(mov=>mov==130));
+// //EQUALITY
+// console.log(movements.includes(-130));
+// //CONDITION
+// console.log(movements.some(mov=>mov==130));
 
-const anyDeposit = movements.some(mov=>mov>0)
-console.log(anyDeposit);
+// const anyDeposit = movements.some(mov=>mov>0)
+// console.log(anyDeposit);
 
-///////Every
-console.log(movements.every(mov=>mov>0));
-console.log(account3.movements.every(mov=>mov>0));
+// ///////Every
+// console.log(movements.every(mov=>mov>0));
+// console.log(account3.movements.every(mov=>mov>0));
 
-//separate callback
+// //separate callback
 
-const deposit = mov=>mov>0;
-console.log(movements.some(deposit));
-console.log(movements.every(deposit));
-console.log(movements.find(deposit));
+// const deposit = mov=>mov>0;
+// console.log(movements.some(deposit));
+// console.log(movements.every(deposit));
+// console.log(movements.find(deposit));
+
+//////////////////////flat and flatMap/////////////////
+//flat
+const arr = [[1,2,3],[2,3,1],7,8]
+console.log(arr.flat());
+
+const arrDeep= [[1,[2,3]],[2,[3,1]],7,8]  
+console.log(arrDeep.flat(2));
+
+const overalBalance =accounts
+  .map(acc=>acc.movements)
+  .flat()
+  .reduce((acc,mov)=>acc+mov,0)
+console.log(overalBalance);
+
+//flatMap
+const overalBalance2=accounts
+  .flatMap(acc=>acc.movements)
+  .reduce((acc,mov)=>acc+mov,0);
+console.log(overalBalance2);
