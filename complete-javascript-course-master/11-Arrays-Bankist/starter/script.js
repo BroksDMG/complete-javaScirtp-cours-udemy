@@ -432,26 +432,45 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(movements);
 ///////////////more ways to creating and filling arrays
 //fill
-const arr=[1,2,3,4,5,6,7];
-console.log(new Array(1,2,3,4,5,6,7));
-const x =new Array(7)
-x.fill(1,3,5)
-x.fill(1);
-console.log(x);
+// const arr=[1,2,3,4,5,6,7];
+// console.log(new Array(1,2,3,4,5,6,7));
+// const x =new Array(7)
+// x.fill(1,3,5)
+// x.fill(1);
+// console.log(x);
 
-arr.fill(23,2,6);
-console.log(arr);
-//Array.from
-const y =Array.from({length:7},()=>1);
-console.log(y);
-const z =Array.from({length:7},(_,i)=>1+i);
-console.log(z);
+// arr.fill(23,2,6);
+// console.log(arr);
+// //Array.from
+// const y =Array.from({length:7},()=>1);
+// console.log(y);
+// const z =Array.from({length:7},(_,i)=>1+i);
+// console.log(z);
 
-labelBalance.addEventListener('click',function(){
-  const movementUI=Array.from(
-    document.querySelectorAll('.movements__value'),
-    el=>Number(el.textContent.replace('€',''))
-  )
-    console.log(movementUI);
-  
-})
+// labelBalance.addEventListener('click',function(){
+//   const movementUI=Array.from(
+//     document.querySelectorAll('.movements__value'),
+//     el=>Number(el.textContent.replace('€',''))
+//     )
+//     console.log(movementUI);
+//   })
+    
+/////////////////////Array methods practice//////////////\
+
+///1
+const bankDepositSum=accounts
+.flatMap(acc=>acc.movements)
+.filter(mov=>mov>0)
+.reduce((sum,cur)=>sum+cur,0);
+console.log(bankDepositSum);
+///2
+const numDeposits1000=accounts
+  .flatMap(acc=>acc.movements)
+  .filter(mov=>mov>=1000)
+  .length;
+const numDeposits10002=accounts
+  .flatMap(acc=>acc.movements)
+  .reduce((counter,cur)=>cur>=1000?counter+1:counter,0)
+
+console.log(numDeposits10002);
+console.log(numDeposits1000);
