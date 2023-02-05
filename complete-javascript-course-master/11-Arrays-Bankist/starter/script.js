@@ -470,7 +470,64 @@ const numDeposits1000=accounts
   .length;
 const numDeposits10002=accounts
   .flatMap(acc=>acc.movements)
-  .reduce((counter,cur)=>cur>=1000?counter+1:counter,0)
+  .reduce((counter,cur)=>cur>=1000?++counter:counter,0)
+  
+  console.log(numDeposits10002);
+  console.log(numDeposits1000);
+////Prefixed ++ operator
+let a =10;
+console.log(++a);
+console.log(a++);
+console.log(a);
+/////3
 
-console.log(numDeposits10002);
-console.log(numDeposits1000);
+const {deposits,withdrawals}=accounts
+  .flatMap(acc=>acc.movements)
+  .reduce((sum,cur)=>{
+    // cur>0?(sum.deposits+=cur):(sum.withdrawals+=cur)
+    sum[cur>0?"deposits":"withdrawals"]+=cur
+    return sum
+  },{deposits:0,withdrawals:0})
+console.log(deposits,withdrawals);
+
+//4
+//this is a nice title->This Is a Nice Title
+const convertTitleCase=function(title){
+  const capitalize=str=>str[0].toUpperCase()+str.slice(1);
+  
+  const exceptions =['a','an','the','but','or','on','in','with']
+
+  const titleCase=title
+  .toLowerCase()
+  .split(' ')
+  .map(word=>(exceptions.includes(word)?word:capitalize(word)))
+  .join(' ');  
+  return titleCase;
+}
+
+console.log(convertTitleCase('This is a nice title'));
+console.log(convertTitleCase('This is a LONG title but not too long'));
+console.log(convertTitleCase('and here is another title with an EXAMLPE'));
+
+
+
+
+
+
+
+
+
+
+
+// const arr100 =Array.from({length:100},(_,i)=>i+1);
+// console.log(arr100);
+// const arrreduce3=arr100.filter(cur=>cur%3===0);
+// const arrreduce5=arr100.filter(cur=>cur%5===0);
+// const arrreduce3and5=arr100.filter(cur=>cur%3===0&&cur%5===0).toString();
+// console.log(arrreduce3);
+// console.log(arrreduce5);
+// console.log(arrreduce3and5);
+// const arrstring =arr100.toString()
+// const replace3=arrstring.replace(3,'bazz')
+// console.log(arrstring);
+// console.log(replace3);
